@@ -26,3 +26,15 @@ def user_login(request):
             messages.error(request, 'Email não cadastrado!')
         return render(request, 'login.html')
     return render(request, 'login.html')
+
+def singup():
+ 
+    new_user = Users()
+    new_user.name = 'admin'
+    new_user.lastname = 'admin'
+    new_user.username = 'admin'
+    new_user.email = 'admin@admin.com'
+    new_user.password = "admin"
+    new_user.save()
+    return 'Criado com sucesso!'
+
