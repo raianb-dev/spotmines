@@ -1,12 +1,23 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Minha Página</title>
 </head>
-<body>
-    Tela do mines
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+<body style="background-color: #0775cc">
+    <table>
+        {% for i in "12345" %}
+        <tr>
+            {% for j in "12345" %}
+            <td><img src="{% static 'img/1.jpg' %}" alt="Star"></td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+    <input class="bnt" type="button" value="Gerar Hack">
 </body>
+
 </html>

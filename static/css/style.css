@@ -1,0 +1,14 @@
+td {
+    padding: 0px; 
+  }
+table {
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+td:hover img {
+    transform: scale(1.1);
+    transition: all 0.4s ease-in-out;
+  }
