@@ -6,18 +6,34 @@
     <title>Minha Página</title>
 </head>
 <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
 
-<body style="background-color: #0775cc">
-    <table>
-        {% for i in "12345" %}
-        <tr>
-            {% for j in "12345" %}
-            <td><img src="{% static 'img/1.jpg' %}" alt="Star"></td>
+<body onload="changeBackgroundColor()">
+
+    <div id="loading" class="loading">
+        <div class="spinner"></div>
+        <div id="loading-text"></div>
+    </div>
+    <div class="container">
+        <table>
+            {% for i in "12345" %}
+            <tr>
+                {% for j in "12345" %}
+                <td><img src="{% static 'img/1.jpg' %}" alt="Star"></td>
+                {% endfor %}
+            </tr>
             {% endfor %}
-        </tr>
-        {% endfor %}
-    </table>
-    <input class="bnt" type="button" value="Gerar Hack">
+        </table>
+        <div id="countdown" class="alert alert-success" role="alert"></div>
+        <input id="gerar-hack" class="bnt" type="button" value="Gerar Hack">
+    </div>
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
+<script>
+    function changeBackgroundColor() {
+        document.body.style.backgroundColor = "#0775cc";
+    }
+</script>
 
 </html>

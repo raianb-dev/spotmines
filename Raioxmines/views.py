@@ -27,6 +27,11 @@ def user_login(request):
         return render(request, 'login.html')
     return render(request, 'login.html')
 
+def g_hack(request):
+    return render(request, 'home.html')
+
+
+
 def singup():
  
     new_user = Users()
