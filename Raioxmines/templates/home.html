@@ -9,8 +9,9 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
 
-<body onload="changeBackgroundColor()">
-
+<body>
+    <img src="{% static 'img/mines-bomb.3e2ede48c255cbf9.svg' %}" class="svg-left">
+    <img src="{% static 'img/mines-star.2a6a3218b2bd3be1.svg' %}" class="svg-right">
     <div id="loading" class="loading">
         <div class="spinner"></div>
         <div id="loading-text"></div>
@@ -30,10 +31,5 @@
     </div>
     <script src="{% static 'js/script.js' %}"></script>
 </body>
-<script>
-    function changeBackgroundColor() {
-        document.body.style.backgroundColor = "#0775cc";
-    }
-</script>
 
 </html>

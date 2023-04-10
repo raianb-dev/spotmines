@@ -1,5 +1,7 @@
 document.body.style.backgroundColor = "#0775cc";
 
+
+
 document.getElementById("gerar-hack").addEventListener("click", function () {
   document.querySelector("table").style.display = "none";
   document.getElementById("loading").style.display = "flex";
