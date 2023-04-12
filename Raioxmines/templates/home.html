@@ -5,11 +5,13 @@
 <head>
     <title>Minha Página</title>
 </head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/media.css' %}">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
 
-<body>
+
+<body class="oi">
     <img src="{% static 'img/mines-bomb.3e2ede48c255cbf9.svg' %}" class="svg-left">
     <img src="{% static 'img/mines-star.2a6a3218b2bd3be1.svg' %}" class="svg-right">
     <div id="loading" class="loading">
@@ -27,7 +29,7 @@
             {% endfor %}
         </table>
         <div id="countdown" class="alert alert-success" role="alert"></div>
-        <input id="gerar-hack" class="bnt" type="button" value="Gerar Hack">
+        <input id="gerar-hack" class="bnt" type="button" value="GERAR HACK">
     </div>
     <script src="{% static 'js/script.js' %}"></script>
 </body>

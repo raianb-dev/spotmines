@@ -1,0 +1,259 @@
+@media screen and (max-width: 400px) {
+    table {
+        margin: 0 auto;
+        position: fixed;
+        top: 120vw;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+    }
+
+    .container {
+        scale: 0.6;
+    }
+
+    td {
+        padding: 1px;
+    }
+
+    #gerar-hack {
+        display: relative;
+
+        margin-top: 167vw;
+        min-width: 135vw;
+        min-height: 7ch;
+    }
+
+    .svg-left {
+        position: absolute;
+        top: 10px;
+        left: 0;
+        left: -50%;
+    }
+
+    .svg-right {
+        position: fixed;
+        top: 500px;
+        right: 0;
+        right: -50%;
+    }
+
+    #countdown {
+        min-height: 6ch;
+        opacity: 0;
+        display: block;
+        margin-top: 20px;
+        font-weight: bolder;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+
+}
+
+@media only screen and (min-width: 500px) and (max-width: 600px) {
+    table {
+        margin: 0 auto;
+        position: fixed;
+        top: 120vw;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+    }
+
+    .container {
+        scale: 0.7;
+    }
+
+    td {
+        padding: 1px;
+    }
+
+    #gerar-hack {
+        display: fixed;
+
+        margin-top: 162vw;
+        min-width: 120vw;
+        min-height: 7ch;
+    }
+
+    .svg-left {
+        position: absolute;
+        top: 10px;
+        left: 0;
+        left: -50%;
+    }
+
+    .svg-right {
+        position: fixed;
+        top: 500px;
+        right: 0;
+        right: -50%;
+    }
+
+    #countdown {
+        min-height: 6ch;
+        opacity: 0;
+        display: block;
+        margin-top: 20px;
+        font-weight: bolder;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+
+}
+
+@media only screen and (max-width: 300px) {
+    table {
+        margin: 0 auto;
+        position: fixed;
+        top: 220vw;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+    }
+
+    .container {
+        scale: 0.5;
+    }
+
+    td {
+        padding: 1px;
+    }
+
+    #gerar-hack {
+        display: relative;
+
+        margin-top: 280vw;
+        min-width: 133vw;
+        min-height: 7ch;
+    }
+
+    .svg-left {
+        position: absolute;
+        top: 10px;
+        left: 0;
+        left: -50%;
+    }
+
+    .svg-right {
+        position: fixed;
+        top: 500px;
+        right: 0;
+        right: -50%;
+    }
+
+    #countdown {
+        min-height: 6ch;
+        opacity: 0;
+        display: block;
+        margin-top: 20px;
+        font-weight: bolder;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+
+}
+
+@media only screen and (min-width: 400px) and (max-width: 500px) {
+    table {
+        margin: 0 auto;
+        position: fixed;
+        top: 120vw;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+    }
+
+    .container {
+        scale: 0.7;
+    }
+
+    td {
+        padding: 1px;
+    }
+
+    #gerar-hack {
+        display: relative;
+
+        margin-top: 160vw;
+        min-width: 123vw;
+        min-height: 7ch;
+    }
+
+    .svg-left {
+        position: absolute;
+        top: 10px;
+        left: 0;
+        left: -50%;
+    }
+
+    .svg-right {
+        position: fixed;
+        top: 500px;
+        right: 0;
+        right: -50%;
+    }
+
+    #countdown {
+        min-height: 6ch;
+        opacity: 0;
+        display: block;
+        margin-top: 20px;
+        font-weight: bolder;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+
+}
+
+@media only screen and (min-width: 800px) and (max-width: 900px) {
+    table {
+        margin: 0 auto;
+        position: fixed;
+        top: 70vw;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+    }
+
+    .container {
+        scale: 1;
+    }
+
+    td {
+        padding: 1px;
+    }
+
+    #gerar-hack {
+        display: fixed;
+
+        margin-top: 90vw;
+        min-width: 60vw;
+        min-height: 7ch;
+    }
+
+    .svg-left {
+        position: absolute;
+        top: 10px;
+        left: 0;
+        left: -20%;
+    }
+
+    .svg-right {
+        position: fixed;
+        top: 800px;
+        right: 0;
+        right: -20%;
+    }
+
+    #countdown {
+        min-height: 6ch;
+        opacity: 0;
+        display: block;
+        margin-top: 20px;
+        font-weight: bolder;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+
+}

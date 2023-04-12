@@ -1,9 +1,8 @@
 document.body.style.backgroundColor = "#0775cc";
 
 
-
 document.getElementById("gerar-hack").addEventListener("click", function () {
-  document.querySelector("table").style.display = "none";
+  document.querySelector("table").style.display = "flex";
   document.getElementById("loading").style.display = "flex";
   document.getElementById("loading-text").innerHTML = "Hackeando Mines...";
 
@@ -47,7 +46,8 @@ function abrirCelula(cell) {
 }
 
 function startCountdown() {
-  document.getElementById("countdown").style.display = "block";
+  document.getElementById("countdown").style.display = "flex";
+  document.getElementById("countdown").style.opacity = "1";
   document.body.style.backgroundColor = "#0775cc";
 
   var countdownElement = document.getElementById("countdown");
