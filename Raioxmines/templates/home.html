@@ -18,6 +18,9 @@
         <div class="spinner"></div>
         <div id="loading-text"></div>
     </div>
+    <div class="paragraph">
+        <p id="p"></p>
+    </div>
     <div class="container">
         <table>
             {% for i in "12345" %}
@@ -28,10 +31,52 @@
             </tr>
             {% endfor %}
         </table>
-        <div id="countdown" class="alert alert-success" role="alert"></div>
-        <input id="gerar-hack" class="bnt" type="button" value="GERAR HACK">
+        <div id="countdown"></div>
+        <input id="gerar-hack" class="bnt" type="button" value="RAIO-X MINES">
     </div>
     <script src="{% static 'js/script.js' %}"></script>
+    <script>
+        // Obter o botão pelo seu ID
+        const gerarHackButton = document.getElementById('gerar-hack');
+
+        // Verificar se o botão foi clicado antes e armazenar o valor em localStorage
+        let numClicks = localStorage.getItem('numClicks') || 0;
+
+        gerarHackButton.addEventListener('click', function () {
+            numClicks++;
+            localStorage.setItem('numClicks', numClicks);
+
+            if (numClicks >= 2) {
+                // Desativar o botão por 40 segundos
+                gerarHackButton.disabled = true;
+                setTimeout(function () {
+                    gerarHackButton.disabled = false;
+                    gerarHackButton.value = 'RAIO-X MINES';
+                }, 40000);
+
+                // Esperar 10 segundos antes de iniciar o cronômetro
+                setTimeout(function () {
+                    // Iniciar o cronômetro de 40 segundos
+                    let count = 180;
+                    document.getElementById("gerar-hack").classList.add("disabled");
+                    gerarHackButton.value = `Aguarde ${count}s`;
+                    const intervalId = setInterval(function () {
+                        count--;
+                        gerarHackButton.value = `Aguarde ${count}s`;
+                        gerarHackButton.disabled = true;
+                        document.getElementById("gerar-hack").classList.add("disabled");
+                        if (count === 0) {
+                            clearInterval(intervalId);
+                            gerarHackButton.value = 'RAIO-X MINES';
+                        }
+                    }, 1000);
+
+                }, 63000);
+            }
+            document.getElementById("gerar-hack").classList.remove("disabled");
+            gerarHackButton.disabled = false;
+        });
+    </script>
 </body>
 
 </html>
