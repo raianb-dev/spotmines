@@ -11,22 +11,26 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
 
-<body class="oi">
+<body>
     <img src="{% static 'img/mines-bomb.3e2ede48c255cbf9.svg' %}" class="svg-left">
     <img src="{% static 'img/mines-star.2a6a3218b2bd3be1.svg' %}" class="svg-right">
     <div id="loading" class="loading">
         <div class="spinner"></div>
         <div id="loading-text"></div>
     </div>
-    <div class="paragraph">
-        <p id="p"></p>
-    </div>
+
     <div class="container">
+        <div class="container-img">
+            <img src="{% static 'img/logo.png' %}" alt="logo">
+        </div>
+        <div class="paragraph">
+            <p id="p"></p>
+        </div>
         <table>
             {% for i in "12345" %}
             <tr>
                 {% for j in "12345" %}
-                <td><img src="{% static 'img/1.jpg' %}" alt="Star"></td>
+                <td><img src="{% static 'img/no-star.png' %}" alt="Star"></td>
                 {% endfor %}
             </tr>
             {% endfor %}
@@ -68,13 +72,14 @@
                         if (count === 0) {
                             clearInterval(intervalId);
                             gerarHackButton.value = 'RAIO-X MINES';
+                            document.getElementById("gerar-hack").classList.remove("disabled");
+                            gerarHackButton.disabled = false;
                         }
                     }, 1000);
 
                 }, 63000);
+
             }
-            document.getElementById("gerar-hack").classList.remove("disabled");
-            gerarHackButton.disabled = false;
         });
     </script>
 </body>
