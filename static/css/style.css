@@ -1,3 +1,14 @@
+body {
+  background-image: linear-gradient(to top, #6969df 50%, #000000 90%);
+  background-repeat: repeat;
+  background-size: cover;
+  mask-image: url('mask.svg');
+  mask-repeat: no-repeat;
+  mask-size: 100%;
+  mask-position: center;
+  height: 100vh;
+}
+
 td {
   padding: 7px;
 

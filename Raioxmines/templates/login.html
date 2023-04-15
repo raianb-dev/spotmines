@@ -19,8 +19,14 @@
     }
 
     body {
+        background-image: linear-gradient(to top, #6969df 50%, #000000 90%);
+        background-repeat: repeat;
+        background-size: cover;
+        mask-image: url('mask.svg');
+        mask-repeat: no-repeat;
+        mask-size: 100%;
+        mask-position: center;
         height: 100vh;
-        background: linear-gradient(to top, #c9c9ff 50%, #9090fa 90%) no-repeat;
     }
 
     .container {
@@ -110,7 +116,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: #fff;
+        background-color: rgb(255, 255, 255);
         padding: 0px 8px;
         color: rgb(94, 94, 94)
     }
@@ -207,8 +213,7 @@
                                 }
                             </style>
                         </form>
-                        <div class="text-center pt-4 text-muted">Não possui uma conta? <a
-                                href="">Comprar o Acesso </a>
+                        <div class="text-center pt-4 text-muted">Não possui uma conta? <a href="">Comprar o Acesso </a>
                         </div>
                     </div>
 
@@ -221,4 +226,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 </body>
+
 </html>
