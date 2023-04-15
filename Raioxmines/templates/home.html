@@ -12,8 +12,8 @@
 
 
 <body>
-    <img src="{% static 'img/mines-bomb.3e2ede48c255cbf9.svg' %}" class="svg-left">
-    <img src="{% static 'img/mines-star.2a6a3218b2bd3be1.svg' %}" class="svg-right">
+   <!--<img src="{% static 'img/mines-bomb.3e2ede48c255cbf9.svg' %}" class="svg-left">--> 
+    <!--<img src="{% static 'img/mines-star.2a6a3218b2bd3be1.svg' %}" class="svg-right">-->
     <div id="loading" class="loading">
         <div class="spinner"></div>
         <div id="loading-text"></div>
@@ -40,48 +40,56 @@
     </div>
     <script src="{% static 'js/script.js' %}"></script>
     <script>
-        // Obter o botão pelo seu ID
         const gerarHackButton = document.getElementById('gerar-hack');
-
-        // Verificar se o botão foi clicado antes e armazenar o valor em localStorage
         let numClicks = localStorage.getItem('numClicks') || 0;
-
+      
         gerarHackButton.addEventListener('click', function () {
-            numClicks++;
-            localStorage.setItem('numClicks', numClicks);
-
-            if (numClicks >= 2) {
-                // Desativar o botão por 40 segundos
-                gerarHackButton.disabled = true;
-                setTimeout(function () {
-                    gerarHackButton.disabled = false;
-                    gerarHackButton.value = 'RAIO-X MINES';
-                }, 40000);
-
-                // Esperar 10 segundos antes de iniciar o cronômetro
-                setTimeout(function () {
-                    // Iniciar o cronômetro de 40 segundos
-                    let count = 180;
-                    document.getElementById("gerar-hack").classList.add("disabled");
-                    gerarHackButton.value = `Aguarde ${count}s`;
-                    const intervalId = setInterval(function () {
-                        count--;
-                        gerarHackButton.value = `Aguarde ${count}s`;
-                        gerarHackButton.disabled = true;
-                        document.getElementById("gerar-hack").classList.add("disabled");
-                        if (count === 0) {
-                            clearInterval(intervalId);
-                            gerarHackButton.value = 'RAIO-X MINES';
-                            document.getElementById("gerar-hack").classList.remove("disabled");
-                            gerarHackButton.disabled = false;
-                        }
-                    }, 1000);
-
-                }, 63000);
-
+          numClicks++;
+          localStorage.setItem('numClicks', numClicks);
+      
+          if (numClicks >= 2) {
+            const remainingTime = localStorage.getItem('remainingTime');
+            if (remainingTime) {
+              startTimer(remainingTime);
+            } else {
+              setTimeout(() => startTimer(180000), 63000); // Atraso de 63 segundos (63000 ms)
             }
+          }
         });
-    </script>
+      
+        function startTimer(duration) {
+          const startTime = Date.now();
+          const endTime = startTime + duration;
+          let timeLeft = duration;
+      
+          const intervalId = setInterval(function () {
+            const elapsedTime = Date.now() - startTime;
+            timeLeft = duration - elapsedTime;
+      
+            if (timeLeft <= 0) {
+              clearInterval(intervalId);
+              gerarHackButton.value = 'RAIO-X MINES';
+              gerarHackButton.disabled = false;
+              gerarHackBtn.classList.remove("disabled");
+              localStorage.removeItem('remainingTime');
+            } else {
+
+              gerarHackButton.value = `Aguarde ${Math.ceil(timeLeft / 1000)}s`;
+              gerarHackButton.disabled = true;
+              gerarHackBtn.classList.add("disabled");
+              localStorage.setItem('remainingTime', timeLeft);
+            }
+          }, 1000);
+        }
+      
+        window.addEventListener('load', function () {
+          const remainingTime = localStorage.getItem('remainingTime');
+          if (remainingTime) {
+            startTimer(remainingTime);
+          }
+        });
+      </script>
+      
 </body>
 
 </html>
