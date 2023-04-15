@@ -131,3 +131,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # ALLOWED HOSTS 
 ALLOWED_HOSTS = ['*']
+
+
+# LOGIN ROUTE 
+
+
+LOGIN_URL = '/login/'
