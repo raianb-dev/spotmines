@@ -59,7 +59,7 @@ function startCountdown() {
   let timeLeft = 60;
   countdownElement.style.opacity = "1";
   pElement.style.opacity = "1";
-  pElement.innerHTML = ` Acertividade: 96% | ${numBombs} Estrelas e ${numStars} Bombas`;
+  pElement.innerHTML = ` Assertividade: 96% | ${numBombs} Estrelas e ${numStars} Bombas`;
 
   const countdownInterval = setInterval(function() {
     timeLeft--;

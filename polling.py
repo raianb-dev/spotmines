@@ -3,4 +3,4 @@ import time
 
 while True:
     subprocess.run(['git', 'pull'])
-    time.sleep(300) 
+    time.sleep(60) 

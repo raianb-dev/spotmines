@@ -34,7 +34,7 @@ input.bnt {
   transform: translate(-50%, -50%);
   min-width: 36vw;
   min-height: 7ch;
-  background-image: linear-gradient(to right, #003597, #0053c0, #00379c);
+  background-image: linear-gradient(to right, #347bff, #2346bb, #347bff);
   border: solid 2px black;
   border-radius: 20px;
   color: aliceblue;
