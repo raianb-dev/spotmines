@@ -1,4 +1,4 @@
-document.body.style.backgroundColor = "#077500";
+document.body.style.backgroundColor = "#0775cc";
 const table = document.querySelector("table");
 const cells = document.querySelectorAll("td");
 const countdownElement = document.getElementById("countdown");
