@@ -8,7 +8,7 @@ urlpatterns = [
   path('home/', views.home, name='home'),
   path('', views.welcome, name='welcome'),
 
-  path('', views.webhook, name='webhoks')
+  path('/webhooks', views.webhook, name='webhoks')
 ]
 
 if settings.DEBUG:
