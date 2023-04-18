@@ -5,9 +5,13 @@ from django.contrib.auth.decorators import login_required
 import json
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+import asyncio
+from django.contrib.auth.hashers import make_password
+from .models import Users
+
 
 @csrf_exempt
-def webhook(request):
+async def webhook(request):
     if request.method == 'POST':
         # Obter o corpo da solicitação POST
         body_unicode = request.body.decode('utf-8')
@@ -15,6 +19,7 @@ def webhook(request):
 
         # Retornar o conteúdo da solicitação POST
         print(body)
+        await create_user(request.POST) 
         return JsonResponse(body,status=200)
 
     # Retornar uma mensagem de erro para outras solicitações HTTP
@@ -48,6 +53,31 @@ def user_login(request):
 
 def g_hack(request):
     return render(request, 'home.html')
+
+
+async def create_user(data):
+    full_name = data.get('Customer', {}).get('full_name', '')
+    name_parts = full_name.split(' ')
+    first_name = name_parts[0] if name_parts else ''
+    last_name = name_parts[-1] if name_parts else ''
+
+    email = data.get('Customer', {}).get('email', '')
+    username = email.split('@')[0] if email else ''
+    password = username
+
+    new_user = Users(
+        name=first_name,
+        lastname=last_name,
+        username=username,
+        email=email,
+        password=make_password(password)
+    )
+
+    await new_user.save()
+
+    return 'Criado com sucesso!'
+
+
 
 
 
