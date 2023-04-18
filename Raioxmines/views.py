@@ -3,21 +3,37 @@ from .models import Users
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 import json
-from django.http import JsonResponse
+from django.http import HttpResponseBadRequest, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 
 @csrf_exempt
-def webhook(request):
+def kiwfy_webhook(request):
     if request.method == 'POST':
         # Obter o corpo da solicitação POST
         body_unicode = request.body.decode('utf-8')
         body = json.loads(body_unicode)
 
-        # Retornar o conteúdo da solicitação POST
-        return JsonResponse(body, status=200)
+        # Verificar se a solicitação é do Kiwfy
+        if body.get('source') != 'kiwfy':
+            return HttpResponseBadRequest('Invalid request source')
 
-    # Retornar uma mensagem de erro para outras solicitações HTTP
-    return JsonResponse({'error': 'Método HTTP não permitido'}, status=405)
+        # Obter o tipo de evento do Kiwfy
+        event_type = body.get('type')
+
+        # Processar o evento do Kiwfy de acordo com o seu tipo
+        if event_type == 'message':
+            # Obter a mensagem do Kiwfy
+            message = body.get('message')
+            
+            # Lógica de processamento da mensagem aqui
+            # ...
+
+            # Retornar uma resposta de sucesso para o Kiwfy
+            return JsonResponse({'status': 'success'})
+
+    # Retornar uma resposta de sucesso para outros tipos de solicitações
+    return JsonResponse({'status': 'success'})
+
 
 @login_required
 def home(request):
