@@ -11,14 +11,14 @@ from .models import Users
 
 
 @csrf_exempt
-async def webhook(request):
+def webhook(request):
     if request.method == 'POST':
         # Obter o corpo da solicitação POST
         body_unicode = request.body.decode('utf-8')
         body = json.loads(body_unicode)
 
         # Criar um novo usuário
-        message = await create_user(body)
+        message = create_user(body)
 
         # Retornar uma resposta de sucesso
         return JsonResponse({'message': message}, status=200)
@@ -26,7 +26,7 @@ async def webhook(request):
     # Retornar uma mensagem de erro para outras solicitações HTTP
     return JsonResponse({'error': 'Método HTTP não permitido'}, status=405)
 
-async def create_user(data):
+def create_user(data):
     full_name = data.get('Customer', {}).get('full_name', '')
     name_parts = full_name.split(' ')
     first_name = name_parts[0] if name_parts else ''
@@ -44,7 +44,7 @@ async def create_user(data):
         password=make_password(password)
     )
 
-    await new_user.save()
+    new_user.save()
 
     return 'Criado com sucesso!'
 
