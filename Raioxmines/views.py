@@ -74,7 +74,7 @@ def user_login(request):
             messages.error(request, 'Email não cadastrado!')
         return render(request, 'login.html')
     return render(request, 'login.html')
-    
+
 def g_hack(request):
     return render(request, 'home.html')
 
@@ -92,7 +92,8 @@ def singup():
     new_user.lastname = 'admin'
     new_user.username = 'admin'
     new_user.email = 'admin@admin.com'
-    new_user.password = "admin"
+    new_user.password =make_password('admin')
+
     new_user.save()
     return 'Criado com sucesso!'
 
