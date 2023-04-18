@@ -14,6 +14,7 @@ def webhook(request):
         body = json.loads(body_unicode)
 
         # Retornar o conteúdo da solicitação POST
+        print(body)
         return JsonResponse(body,status=200)
 
     # Retornar uma mensagem de erro para outras solicitações HTTP
