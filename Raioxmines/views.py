@@ -26,6 +26,10 @@ def webhook(request):
     # Retornar uma mensagem de erro para outras solicitações HTTP
     return JsonResponse({'error': 'Método HTTP não permitido'}, status=405)
 
+import os
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Mail
+
 def create_user(data):
     full_name = data.get('Customer', {}).get('full_name', '')
     name_parts = full_name.split(' ')
@@ -45,6 +49,28 @@ def create_user(data):
     )
 
     new_user.save()
+
+    # Enviar e-mail usando SendGrid
+    from_email = 'rainpb2011@hotmail.com'
+    to_email = email
+    subject = 'Bem-vindo ao nosso site!'
+    html_content = '<p>Olá ' + first_name + ',</p><p>Sua senha é ' + password + '.</p>'
+
+    message = Mail(
+        from_email=from_email,
+        to_emails=to_email,
+        subject=subject,
+        html_content=html_content
+    )
+
+    try:
+        sg = SendGridAPIClient(os.environ.get('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'))
+        response = sg.send(message)
+        print(response.status_code)
+        print(response.body)
+        print(response.headers)
+    except Exception as e:
+        print(e.message)
 
     return 'Criado com sucesso!'
 
