@@ -56,6 +56,7 @@ def home(request):
 def welcome(request):
     return render(request, 'home.html')
 
+from django.contrib.auth.hashers import check_password
 
 def user_login(request):
     if request.method == 'POST':
@@ -65,7 +66,7 @@ def user_login(request):
   
         if q_email.exists():
             user = q_email.first()
-            if password == user.password:
+            if check_password(password, user.password):
                 return render(request, 'home.html')
             else:
                 messages.error(request, 'Senha incorreta!')
@@ -73,7 +74,7 @@ def user_login(request):
             messages.error(request, 'Email não cadastrado!')
         return render(request, 'login.html')
     return render(request, 'login.html')
-
+    
 def g_hack(request):
     return render(request, 'home.html')
 
