@@ -3,36 +3,29 @@ from .models import Users
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 import json
+import requests
 from django.http import HttpResponseBadRequest, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 
 @csrf_exempt
-def kiwfy_webhook(request):
+def webhook(request):
     if request.method == 'POST':
         # Obter o corpo da solicitação POST
         body_unicode = request.body.decode('utf-8')
         body = json.loads(body_unicode)
 
-        # Verificar se a solicitação é do Kiwfy
-        if body.get('source') != 'kiwfy':
-            return HttpResponseBadRequest('Invalid request source')
+        # Verificar se a solicitação é do Kiwfy verificando o token do webhook
+        webhook_token = request.META.get('HTTP_X_WEBHOOK_TOKEN')
+        if webhook_token != 'cid68lja9ua':
+            return HttpResponseBadRequest('Token inválido')
 
-        # Obter o tipo de evento do Kiwfy
-        event_type = body.get('type')
+        # Extrair informações relevantes da solicitação
+        evento = body.get('event')
+        venda_id = evento.get('order_id')
+        # ...
 
-        # Processar o evento do Kiwfy de acordo com o seu tipo
-        if event_type == 'message':
-            # Obter a mensagem do Kiwfy
-            message = body.get('message')
-            
-            # Lógica de processamento da mensagem aqui
-            # ...
-
-            # Retornar uma resposta de sucesso para o Kiwfy
-            return JsonResponse({'status': 'success'})
-
-    # Retornar uma resposta de sucesso para outros tipos de solicitações
-    return JsonResponse({'status': 'success'})
+        # Enviar uma resposta de sucesso ao Kiwfy
+        return JsonResponse({'status': 'sucesso'})
 
 
 @login_required

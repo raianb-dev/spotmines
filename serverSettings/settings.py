@@ -137,3 +137,4 @@ ALLOWED_HOSTS = ['*']
 
 
 LOGIN_URL = '/login/'
+
