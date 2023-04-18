@@ -2,7 +2,23 @@ from django.shortcuts import render, redirect
 from .models import Users
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+import json
 
+
+
+def webhook(request):
+    if request.method == 'POST':
+        # Obter o corpo da solicitação POST
+        body_unicode = request.body.decode('utf-8')
+        body = json.loads(body_unicode)
+
+        # Armazenar os dados em uma variável JSON
+        data = body['data']
+
+        # Lógica de manipulação de webhook aqui
+        # ...
+
+        return data
 
 @login_required
 def home(request):

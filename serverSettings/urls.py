@@ -7,7 +7,8 @@ urlpatterns = [
   path('login/', views.user_login, name='user_login'),
   path('home/', views.home, name='home'),
   path('', views.welcome, name='welcome'),
-  
+
+  path('', views.webhoks, name='webhoks')
 ]
 
 if settings.DEBUG:
