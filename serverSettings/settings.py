@@ -138,3 +138,4 @@ ALLOWED_HOSTS = ['*']
 
 LOGIN_URL = '/login/'
 
+CSRF_COOKIE_SECURE = False
