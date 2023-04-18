@@ -3,8 +3,7 @@ from .models import Users
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 import json
-import requests
-from django.http import HttpResponseBadRequest, JsonResponse
+from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 
 @csrf_exempt
@@ -14,19 +13,11 @@ def webhook(request):
         body_unicode = request.body.decode('utf-8')
         body = json.loads(body_unicode)
 
-        # Verificar se a solicitação é do Kiwfy verificando o token do webhook
-        webhook_token = request.META.get('HTTP_X_WEBHOOK_TOKEN')
-        if webhook_token != 'cid68lja9ua':
-            return HttpResponseBadRequest('Token inválido')
+        # Retornar o conteúdo da solicitação POST
+        return JsonResponse(body,status=200)
 
-        # Extrair informações relevantes da solicitação
-        evento = body.get('event')
-        venda_id = evento.get('order_id')
-        # ...
-
-        # Enviar uma resposta de sucesso ao Kiwfy
-        return JsonResponse({'status': 'sucesso'})
-
+    # Retornar uma mensagem de erro para outras solicitações HTTP
+    return JsonResponse({'error': 'Método HTTP não permitido'}, status=405)
 
 @login_required
 def home(request):
