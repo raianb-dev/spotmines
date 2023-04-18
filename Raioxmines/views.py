@@ -3,22 +3,21 @@ from .models import Users
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 import json
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 
-
-
+@csrf_exempt
 def webhook(request):
     if request.method == 'POST':
         # Obter o corpo da solicitação POST
         body_unicode = request.body.decode('utf-8')
         body = json.loads(body_unicode)
 
-        # Armazenar os dados em uma variável JSON
-        data = body['data']
+        # Retornar o conteúdo da solicitação POST
+        return JsonResponse(body, status=200)
 
-        # Lógica de manipulação de webhook aqui
-        # ...
-
-        return data
+    # Retornar uma mensagem de erro para outras solicitações HTTP
+    return JsonResponse({'error': 'Método HTTP não permitido'}, status=405)
 
 @login_required
 def home(request):
