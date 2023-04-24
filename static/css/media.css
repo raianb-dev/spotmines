@@ -134,8 +134,8 @@
         margin-top: 180vw;
         width: 20%;
     }
-    .paragraph{
-        transform: translatey(-35vw);
+    .paragraph, #p{
+        transform: translatey(+5vw);
     }
     #countdown{
         margin-top: 110vw;
