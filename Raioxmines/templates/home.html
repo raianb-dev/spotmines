@@ -16,7 +16,8 @@
   <!--<img src="{% static 'img/mines-bomb.3e2ede48c255cbf9.svg' %}" class="svg-left">-->
   <!--<img src="{% static 'img/mines-star.2a6a3218b2bd3be1.svg' %}" class="svg-right">-->
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark"
+    style=" box-shadow: 20px 20px 80px rgba(218, 218, 218, 0.315);">
     <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
         aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -61,6 +62,9 @@
     </div>
   </div>
 
+
+
+
   <script src="{% static 'js/script.js' %}"></script>
   <script>
     const gerarHackButton = document.getElementById('gerar-hack');
@@ -70,12 +74,12 @@
       numClicks++;
       localStorage.setItem('numClicks', numClicks);
 
-      if (numClicks >= 2) {
+      if (numClicks >= 1) {
         const remainingTime = localStorage.getItem('remainingTime');
         if (remainingTime) {
           startTimer(remainingTime);
         } else {
-          setTimeout(() => startTimer(600000), 63000); // Atraso de 63 segundos (63000 ms)
+          setTimeout(() => startTimer(60000), 55000); // Atraso de 63 segundos (63000 ms)
         }
       }
     });
@@ -114,5 +118,14 @@
   </script>
 
 </body>
+<footer class="bg-dark text-white text-center text-lg-start">
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2023 Copyright:
+    <a class="text-white" href="http://www.hackdasminas.com">www.hackdasminas.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
 
 </html>

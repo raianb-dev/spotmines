@@ -1,4 +1,4 @@
-@media screen and (max-width: 500px) {
+@media only screen and (min-width: 350px) and (max-width: 400px) {
     table {
         margin: 0 auto;
         position: absolute;
@@ -18,10 +18,6 @@
         padding: 5px;
     }
 
-    input #gerarhack {
-        display: flex;
-        min-width: 100%;
-    }
 
     .svg-left {
         position: absolute;
@@ -38,15 +34,17 @@
     }
 
     #countdown {
-        min-height: 6ch;
+        min-height: 4ch;
+        font-size: 22px;
         opacity: 0;
-        display: inline-flex;
-        margin-top: 100vw;
+        margin-top: 140vw;
         font-weight: bolder;
         font-family: Arial, Helvetica, sans-serif;
         min-width: 90vw;
         align-items: center;
         justify-content: center;
+        display: flex; /* altera o comportamento padrão da imagem para não ser um elemento flexível */
+        margin: 2 auto;
     }
 
     #p {
@@ -68,6 +66,10 @@
         border: 4px solid rgba(0, 0, 0, 0.425);
         border-top-color: #3498db;
         animation: spin 2s ease-in-out infinite;
+    }
+    input.bnt {
+        min-width: 120%;
+        margin-top: -25vw;
     }
 
     #loading {
@@ -98,76 +100,22 @@
 
 }
     .borda{
-        min-width: 180%;
-        min-height: 1200px;
+        min-width: 180vw;
+        height: -20vw;
 
     }
 
-@media only screen and (max-width: 350px) {
 
-    #gerar-hack{
-        margin-top: 190vw;
-    }
-    .paragraph{
-        transform: translatey(-50vw);
-    }
+@media only screen and (min-width: 1100px) and (max-width: 3000px) {
 
-}
-
-@media only screen and (min-width: 400px) and (max-width: 500px) {
-
-    #gerar-hack{
-        margin-top: 170vw;
-        width: 20%;
-    }
-    .paragraph{
-        transform: translatey(-25vw);
-    }
-    #countdown{
-        margin-top: 110vw;
-    }
-
-}
-@media only screen and (min-width: 300px) and (max-width: 400px) {
-
-    #gerar-hack{
-        margin-top: 180vw;
-        min-width: 100%;
-    }
-    .paragraph, #p{
-        transform: translatey(+5vw);
-    }
-    #countdown{
-        margin-top: 110vw;
-    }
-
-}
-@media only screen and (min-width: 350px) and (max-width: 400px) {
-
-    #gerar-hack{
-        margin-top: 180vw;
-        width: 20%;
-    }
-    .paragraph{
-        transform: translatey(-45vw);
-    }
-    #countdown{
-        margin-top: 110vw;
-        font-size: 19px;
-    }
-
-}
-@media only screen and (min-width: 1100px) and (max-width: 1300px) {
-
-    .paragraph{
-        transform: translatey(-1vw);
-    }
-    #countdown{
-        margin-top: 110vw;
-        font-size: 19px;
-    }
     .container-img img{
         transform: translatey(-50%);
       }
+      .borda{
+        min-width: 50vw;
+        height: -20vw;
+
+    }
+
       
 }
