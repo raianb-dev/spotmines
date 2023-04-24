@@ -3,93 +3,113 @@
 <html>
 
 <head>
-    <title>Raio-x-Mines</title>
+  <title>Raio-x-Mines</title>
 </head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'css/media.css' %}">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 <body>
-   <!--<img src="{% static 'img/mines-bomb.3e2ede48c255cbf9.svg' %}" class="svg-left">--> 
-    <!--<img src="{% static 'img/mines-star.2a6a3218b2bd3be1.svg' %}" class="svg-right">-->
-    <div id="loading" class="loading">
-        <div class="spinner"></div>
-        <div id="loading-text"></div>
-    </div>
+  <!--<img src="{% static 'img/mines-bomb.3e2ede48c255cbf9.svg' %}" class="svg-left">-->
+  <!--<img src="{% static 'img/mines-star.2a6a3218b2bd3be1.svg' %}" class="svg-right">-->
 
-    <div class="container">
-        <div class="container-img">
-            <img src="{% static 'img/logo.png' %}" alt="logo">
-        </div>
-        <div class="paragraph">
-            <p id="p"></p>
-        </div>
-        <table>
-            {% for i in "12345" %}
-            <tr>
-                {% for j in "12345" %}
-                <td><img src="{% static 'img/no-star.png' %}" alt="Star"></td>
-                {% endfor %}
-            </tr>
-            {% endfor %}
-        </table>
-        <div id="countdown"></div>
-        <input id="gerar-hack" class="bnt" type="button" value="GERAR">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
+        aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#">Admin</a>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Alterar senha</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#" tabindex="-1" aria-disabled="false">Logout</a>
+          </li>
+        </ul>
+      </div>
     </div>
-    <script src="{% static 'js/script.js' %}"></script>
-    <script>
-        const gerarHackButton = document.getElementById('gerar-hack');
-        let numClicks = localStorage.getItem('numClicks') || 0;
-      
-        gerarHackButton.addEventListener('click', function () {
-          numClicks++;
-          localStorage.setItem('numClicks', numClicks);
-      
-          if (numClicks >= 2) {
-            const remainingTime = localStorage.getItem('remainingTime');
-            if (remainingTime) {
-              startTimer(remainingTime);
-            } else {
-              setTimeout(() => startTimer(180000), 63000); // Atraso de 63 segundos (63000 ms)
-            }
-          }
-        });
-      
-        function startTimer(duration) {
-          const startTime = Date.now();
-          const endTime = startTime + duration;
-          let timeLeft = duration;
-      
-          const intervalId = setInterval(function () {
-            const elapsedTime = Date.now() - startTime;
-            timeLeft = duration - elapsedTime;
-      
-            if (timeLeft <= 0) {
-              clearInterval(intervalId);
-              gerarHackButton.value = 'RAIO-X MINES';
-              gerarHackButton.disabled = false;
-              gerarHackBtn.classList.remove("disabled");
-              localStorage.removeItem('remainingTime');
-            } else {
+  </nav>
+  <div id="loading" class="loading">
+    <div class="spinner"></div>
+    <div id="loading-text"></div>
+  </div>
 
-              gerarHackButton.value = `Aguarde ${Math.ceil(timeLeft / 1000)}s`;
-              gerarHackButton.disabled = true;
-              gerarHackBtn.classList.add("disabled");
-              localStorage.setItem('remainingTime', timeLeft);
-            }
-          }, 1000);
+  <div class="container">
+    <div class="container-img">
+      <img src="{% static 'img/logo.png' %}" alt="logo">
+    </div>
+    <div class="paragraph">
+      <p id="p"></p>
+    </div>
+    <table>
+      {% for i in "12345" %}
+      <tr>
+        {% for j in "12345" %}
+        <td><img src="{% static 'img/no-star.png' %}" alt="Star"></td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </table>
+    <div id="countdown"></div>
+    <input id="gerar-hack" class="bnt" type="button" value="GERAR">
+  </div>
+  <script src="{% static 'js/script.js' %}"></script>
+  <script>
+    const gerarHackButton = document.getElementById('gerar-hack');
+    let numClicks = localStorage.getItem('numClicks') || 0;
+
+    gerarHackButton.addEventListener('click', function () {
+      numClicks++;
+      localStorage.setItem('numClicks', numClicks);
+
+      if (numClicks >= 2) {
+        const remainingTime = localStorage.getItem('remainingTime');
+        if (remainingTime) {
+          startTimer(remainingTime);
+        } else {
+          setTimeout(() => startTimer(180000), 63000); // Atraso de 63 segundos (63000 ms)
         }
-      
-        window.addEventListener('load', function () {
-          const remainingTime = localStorage.getItem('remainingTime');
-          if (remainingTime) {
-            startTimer(remainingTime);
-          }
-        });
-      </script>
-      
+      }
+    });
+
+    function startTimer(duration) {
+      const startTime = Date.now();
+      const endTime = startTime + duration;
+      let timeLeft = duration;
+
+      const intervalId = setInterval(function () {
+        const elapsedTime = Date.now() - startTime;
+        timeLeft = duration - elapsedTime;
+
+        if (timeLeft <= 0) {
+          clearInterval(intervalId);
+          gerarHackButton.value = 'RAIO-X MINES';
+          gerarHackButton.disabled = false;
+          gerarHackBtn.classList.remove("disabled");
+          localStorage.removeItem('remainingTime');
+        } else {
+
+          gerarHackButton.value = `Aguarde ${Math.ceil(timeLeft / 1000)}s`;
+          gerarHackButton.disabled = true;
+          gerarHackBtn.classList.add("disabled");
+          localStorage.setItem('remainingTime', timeLeft);
+        }
+      }, 1000);
+    }
+
+    window.addEventListener('load', function () {
+      const remainingTime = localStorage.getItem('remainingTime');
+      if (remainingTime) {
+        startTimer(remainingTime);
+      }
+    });
+  </script>
+
 </body>
 
 </html>
