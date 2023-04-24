@@ -2,14 +2,14 @@
     table {
         margin: 0 auto;
         position: absolute;
-        top: 40vw;
+        top: 110vw;
         left: 50%;
         transform: translate(-50%, -50%);
         margin-top: 69vw;
     }
 
     .container {
-        scale: 0.6;
+        scale: 0.5;
         width: 90vw;
     }
 
@@ -18,12 +18,9 @@
         padding: 5px;
     }
 
-    #gerar-hack {
-        display: relative;
-
-        margin-top: 180vw;
-        min-width: 140vw;
-        min-height: 7ch;
+    input #gerarhack {
+        display: flex;
+        min-width: 100%;
     }
 
     .svg-left {
@@ -62,7 +59,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        transform: translatey(-42vw);
     }
 
     .spinner {
@@ -101,7 +97,11 @@
     }
 
 }
+    .borda{
+        min-width: 180%;
+        min-height: 1200px;
 
+    }
 
 @media only screen and (max-width: 350px) {
 
@@ -132,7 +132,7 @@
 
     #gerar-hack{
         margin-top: 180vw;
-        width: 20%;
+        min-width: 100%;
     }
     .paragraph, #p{
         transform: translatey(+5vw);
