@@ -6,10 +6,10 @@ const pElement = document.getElementById("p");
 const gerarHackBtn = document.getElementById("gerar-hack");
 const loading = document.getElementById("loading");
 const loadingText = document.getElementById("loading-text");
-
-let numBombs = 0;
-let numStars = 0;
-let count = 0;
+const possibleBombs = [8, 6, 4, 2];
+const numBombs = possibleBombs[Math.floor(Math.random() * possibleBombs.length)];
+numStars = 0;
+count = 0;
 
 gerarHackBtn.addEventListener("click", function() {
   table.style.display = "flex";
@@ -17,18 +17,25 @@ gerarHackBtn.addEventListener("click", function() {
   loadingText.innerHTML = "Hackeando Mines...";
 
   setTimeout(function() {
-    numBombs= Math.floor(Math.random() * 4) + 3;
-    numStars = (numStars === 3) ? 4 : (numStars === 4) ? 3 : 5;
+    if (numBombs === 8) {
+      numStars = 2;
+    } else if (numBombs === 6) {
+      numStars = 3;
+    } else if (numBombs === 4 || numBombs === 2) {
+      numStars = 6;
+    } else {
+      // Número inválido de bombas
+      numStars = 0;
+    }
     
     const randomCells = [];
-    while (randomCells.length < numBombs) {
+    while (randomCells.length < numStars) {
       const randomIndex = Math.floor(Math.random() * cells.length);
       if (!randomCells.includes(cells[randomIndex])) {
         randomCells.push(cells[randomIndex]);
       }
     }
   
-    let count = 0;
     const interval = setInterval(function() {
       abrirCelula(randomCells[count]);
       count++;
@@ -59,7 +66,7 @@ function startCountdown() {
   let timeLeft = 60;
   countdownElement.style.opacity = "1";
   pElement.style.opacity = "1";
-  pElement.innerHTML = ` Assertividade: 96% | ${numBombs} Estrelas e ${numStars} Bombas`;
+  pElement.innerHTML = ` Assertividade: 96% | ${numStars} Estrelas e ${numBombs} Bombas`;
 
   const countdownInterval = setInterval(function() {
     timeLeft--;
@@ -70,8 +77,6 @@ function startCountdown() {
       countdownElement.style.opacity = "0";
       gerarHackBtn.classList.remove("disabled");
       pElement.style.opacity = "0";
-      numBombs = 0;
-      numStars = 0;
       resetTable();
     }
   }, 1000);
@@ -82,8 +87,6 @@ function resetTable() {
   starCells.forEach(function(starCell) {
     starCell.setAttribute("src", "/static/img/no-star.png");
     starCell.classList.add("animated-star");
-    numBombs = 0;
-    numStars = 0;
-    count = 0;
+
   });
 }

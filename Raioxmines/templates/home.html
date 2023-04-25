@@ -3,7 +3,7 @@
 <html>
 
 <head>
-  <title>Hack do Mines | Melhor Robô do Mercado</title>
+  <title>Hacker das Minas | O Melhor do Mercado</title>
 </head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
@@ -23,8 +23,46 @@
         aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="#">Admin</a>
-      <a href="https://icepromo.info/l/6441479ff6fceeab8f00df83?sub_id={sub_id_1}&click_id={click_id}"><button class="btn btn-outline-light ms-2">🎁 BONUS R$ 300</button></a>
+      <a class="navbar-brand" href="#">Mines</a>
+      <a target="_blank" href="https://arbety.com/home?ref=f71d14e40b914db9b45a7398ba281089"><button id="bonus"
+          class="btn btn-outline-light ms-2">🎁 BÔNUS 100%</button></a>
+      <style>
+        @keyframes pulse {
+          0% {
+            transform: scale(1);
+          }
+
+          50% {
+            transform: scale(1.1);
+          }
+
+          100% {
+            transform: scale(1);
+          }
+        }
+
+        .pulse {
+          animation-name: pulse;
+          animation-duration: 1s;
+          animation-timing-function: ease-in-out;
+          animation-iteration-count: 1;
+        }
+      </style>
+      <script>
+        setInterval(function () {
+          var bonusElement = document.getElementById("bonus");
+          var bonusText = bonusElement.innerHTML;
+          if (bonusText === "🎁 BÔNUS 100%") {
+            bonusElement.innerHTML = "🎁 JOGUE AQUI";
+          } else {
+            bonusElement.innerHTML = "🎁 BÔNUS 100%";
+          }
+          bonusElement.classList.add("pulse");
+          setTimeout(function () {
+            bonusElement.classList.remove("pulse");
+          }, 1000);
+        }, 5000);
+      </script>
 
       <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
@@ -68,7 +106,7 @@
 
   <script>
     // lista de nomes
-    const nomes = ["João F.", "Maria R.", "Pedro L.", "Lucas S.", "Ana C.", "Gustavo H.", "Henrique S."];
+    const nomes = ["João F.", "Maria R.", "Pedro L.", "Lucas S.", "Ana C.", "Gustavo H.", "Henrique S.", "Raian P.", "Carine A.", "Luan S.", "Caio V.", "Samara C.", "Aline G.", "Mayara R.", "Sônia G.", "Paulo H.", "Lisa J.", "Luisa O.", "Fernando P."];
 
     // função para gerar número aleatório
     function gerarNumero(min, max) {
@@ -82,15 +120,15 @@
       const nome = nomes[Math.floor(Math.random() * nomes.length)];
 
       // número aleatório
-      const vezes = gerarNumero(20.0, 560.00);
+      const vezes = gerarNumero(20.00, 564.00);
 
-      notification.innerHTML = nome + " fez  R$" + vezes + ",00 Reais no Mines";
+      notification.innerHTML = "💵 " + nome + " fez  R$" + vezes + ",00 Reais no Mines";
       notification.style.display = "block";
 
       setTimeout(function () {
         notification.style.display = "none";
       }, 5000);
-    }, 15000);
+    }, 10000);
   </script>
 
 
@@ -152,7 +190,7 @@
 
   <!-- Copyright -->
   <div class="text-center p-6" style="background-color: rgba(0, 0, 0, 0.2);">
-    © 2023 Copyright:
+    © 2023 - 2026 Copyright:
     <a class="text-white" href="http://www.hackdasminas.com">www.hackdasminas.com</a>
   </div>
   <!-- Copyright -->
