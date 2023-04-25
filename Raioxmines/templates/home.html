@@ -23,16 +23,13 @@
         aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="https://icepromo.info/l/6441479ff6fceeab8f00df83?sub_id={sub_id_1}&click_id={click_id}">Admin</a>
-      <button class="btn btn-outline-light ms-2">🎁 BONUS R$ 300</button>
+      <a class="navbar-brand" href="#">Admin</a>
+      <a href="https://icepromo.info/l/6441479ff6fceeab8f00df83?sub_id={sub_id_1}&click_id={click_id}"><button class="btn btn-outline-light ms-2">🎁 BONUS R$ 300</button></a>
 
       <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Alterar senha</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="#" tabindex="-1" aria-disabled="false">Logout</a>
+            <a class="nav-link active" href="{% url 'welcome'%}" tabindex="-1" aria-disabled="false">Sair</a>
           </li>
 
         </ul>
@@ -71,7 +68,7 @@
 
   <script>
     // lista de nomes
-    const nomes = ["João", "Maria", "Pedro", "Lucas", "Ana"];
+    const nomes = ["João F.", "Maria R.", "Pedro L.", "Lucas S.", "Ana C.", "Gustavo H.", "Henrique S."];
 
     // função para gerar número aleatório
     function gerarNumero(min, max) {
@@ -85,9 +82,9 @@
       const nome = nomes[Math.floor(Math.random() * nomes.length)];
 
       // número aleatório
-      const vezes = gerarNumero(1, 20);
+      const vezes = gerarNumero(20.0, 560.00);
 
-      notification.innerHTML = nome + " fez " + vezes + "x no Mines";
+      notification.innerHTML = nome + " fez  R$" + vezes + ",00 Reais no Mines";
       notification.style.display = "block";
 
       setTimeout(function () {
