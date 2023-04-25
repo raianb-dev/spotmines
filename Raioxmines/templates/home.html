@@ -122,7 +122,7 @@
       // número aleatório
       const vezes = gerarNumero(20.00, 564.00);
 
-      notification.innerHTML = "💵 " + nome + " fez  R$" + vezes + ",00 Reais no Mines";
+      notification.innerHTML = "💵 " + nome + " fez  R$ " + vezes + ",00 Reais no Mines";
       notification.style.display = "block";
 
       setTimeout(function () {
@@ -142,12 +142,12 @@
       numClicks++;
       localStorage.setItem('numClicks', numClicks);
 
-      if (numClicks >= 1) {
+      if (numClicks >= 2) {
         const remainingTime = localStorage.getItem('remainingTime');
         if (remainingTime) {
           startTimer(remainingTime);
         } else {
-          setTimeout(() => startTimer(60000), 55000); // Atraso de 63 segundos (63000 ms)
+          setTimeout(() => startTimer(30000), 59000); // Atraso de 63 segundos (63000 ms)
         }
       }
     });
@@ -163,7 +163,7 @@
 
         if (timeLeft <= 0) {
           clearInterval(intervalId);
-          gerarHackButton.value = 'RAIO-X MINES';
+          gerarHackButton.value = 'HACKEAR MINES';
           gerarHackButton.disabled = false;
           gerarHackBtn.classList.remove("disabled");
           localStorage.removeItem('remainingTime');

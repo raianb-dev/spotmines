@@ -6,10 +6,12 @@ const pElement = document.getElementById("p");
 const gerarHackBtn = document.getElementById("gerar-hack");
 const loading = document.getElementById("loading");
 const loadingText = document.getElementById("loading-text");
-const possibleBombs = [8, 6, 4, 2];
-const numBombs = possibleBombs[Math.floor(Math.random() * possibleBombs.length)];
-numStars = 0;
-count = 0;
+
+
+let numStars = 0;
+let count = 0;
+let possibleBombs = [8, 6, 4, 2];
+let numBombs = possibleBombs[Math.floor(Math.random() * possibleBombs.length)];
 
 gerarHackBtn.addEventListener("click", function() {
   table.style.display = "flex";
@@ -17,6 +19,7 @@ gerarHackBtn.addEventListener("click", function() {
   loadingText.innerHTML = "Hackeando Mines...";
 
   setTimeout(function() {
+    numBombs = possibleBombs[Math.floor(Math.random() * possibleBombs.length)];
     if (numBombs === 8) {
       numStars = 2;
     } else if (numBombs === 6) {
@@ -27,7 +30,6 @@ gerarHackBtn.addEventListener("click", function() {
       // Número inválido de bombas
       numStars = 0;
     }
-    
     const randomCells = [];
     while (randomCells.length < numStars) {
       const randomIndex = Math.floor(Math.random() * cells.length);
@@ -36,6 +38,7 @@ gerarHackBtn.addEventListener("click", function() {
       }
     }
   
+    let count = 0;
     const interval = setInterval(function() {
       abrirCelula(randomCells[count]);
       count++;
@@ -87,6 +90,6 @@ function resetTable() {
   starCells.forEach(function(starCell) {
     starCell.setAttribute("src", "/static/img/no-star.png");
     starCell.classList.add("animated-star");
-
+    count = 0;
   });
 }
