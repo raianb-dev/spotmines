@@ -5,7 +5,11 @@ STATIC_ROOT = BASE_DIR / 'static'
 
 ...
 
-# Adicione esta linha para especificar a pasta static como um diretório estático
+# Adicione esta linha para especificar a pasta static como um diretï¿½rio estï¿½tico
 STATIC_DIRS = [STATIC_ROOT]
 
 ...
+
+
+workers = 4  # ajuste o nÃºmero de trabalhadores aqui
+worker_connections = 1000
