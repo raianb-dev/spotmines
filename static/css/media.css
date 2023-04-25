@@ -1,4 +1,4 @@
-@media only screen and (min-width: 350px) and (max-width: 400px) {
+@media only screen and (min-width: 350px) and (max-width: 500px) {
     table {
         margin: 0 auto;
         position: absolute;
@@ -15,7 +15,7 @@
 
 
     td {
-        padding: 5px;
+        padding: 10px;
     }
 
 
@@ -37,7 +37,7 @@
         min-height: 4ch;
         font-size: 22px;
         opacity: 0;
-        margin-top: 140vw;
+        margin-top: 150vw;
         font-weight: bolder;
         font-family: Arial, Helvetica, sans-serif;
         min-width: 90vw;
@@ -68,7 +68,7 @@
         animation: spin 2s ease-in-out infinite;
     }
     input.bnt {
-        min-width: 120%;
+        min-width: 140%;
         margin-top: -25vw;
     }
 

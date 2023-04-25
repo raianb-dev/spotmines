@@ -17,25 +17,29 @@
   <!--<img src="{% static 'img/mines-star.2a6a3218b2bd3be1.svg' %}" class="svg-right">-->
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark"
-    style=" box-shadow: 20px 20px 80px rgba(218, 218, 218, 0.315);">
+    style="box-shadow: 20px 20px 80px rgba(218, 218, 218, 0.315);">
     <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
         aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="#">Admin</a>
+      <a class="navbar-brand" href="https://icepromo.info/l/6441479ff6fceeab8f00df83?sub_id={sub_id_1}&click_id={click_id}">Admin</a>
+      <button class="btn btn-outline-light ms-2">🎁 BONUS R$ 300</button>
+
       <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Alterar senha</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" href="#" tabindex="-1" aria-disabled="false">Logout</a>
           </li>
+
         </ul>
       </div>
     </div>
   </nav>
+  <div id="notification"></div>
   <div id="loading" class="loading">
     <div class="spinner"></div>
     <div id="loading-text"></div>
@@ -58,14 +62,43 @@
         {% endfor %}
       </table>
       <div id="countdown"></div>
-      <input id="gerar-hack" class="bnt" type="button" value="GERAR">
+      <input id="gerar-hack" class="bnt" type="button" value="HACKERAR MINES">
+
     </div>
+
+
   </div>
 
+  <script>
+    // lista de nomes
+    const nomes = ["João", "Maria", "Pedro", "Lucas", "Ana"];
 
+    // função para gerar número aleatório
+    function gerarNumero(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    setInterval(function () {
+      const notification = document.getElementById("notification");
+
+      // nome aleatório
+      const nome = nomes[Math.floor(Math.random() * nomes.length)];
+
+      // número aleatório
+      const vezes = gerarNumero(1, 20);
+
+      notification.innerHTML = nome + " fez " + vezes + "x no Mines";
+      notification.style.display = "block";
+
+      setTimeout(function () {
+        notification.style.display = "none";
+      }, 5000);
+    }, 15000);
+  </script>
 
 
   <script src="{% static 'js/script.js' %}"></script>
+  <script src="{% static 'js/notification.js' %}"></script>
   <script>
     const gerarHackButton = document.getElementById('gerar-hack');
     let numClicks = localStorage.getItem('numClicks') || 0;

@@ -68,6 +68,7 @@ function startCountdown() {
     if (timeLeft === 0) {
       clearInterval(countdownInterval);
       countdownElement.style.opacity = "0";
+      gerarHackBtn.classList.remove("disabled");
       pElement.style.opacity = "0";
       numBombs = 0;
       numStars = 0;
