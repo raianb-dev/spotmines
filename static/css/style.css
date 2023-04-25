@@ -31,7 +31,7 @@ td:hover img {
 }
 
 .borda {
-  height: 140ch;
+  height: 130ch;
   box-shadow: 20px 20px 80px rgba(218, 218, 218, 0.315);
   border-radius: 25px;
   max-width: 100%;
@@ -204,7 +204,7 @@ img {
 
 #notification {
   position: fixed;
-  bottom: 20px;
+  bottom: 50px;
   right: 0px;
   background-color: green;
   color: white;
@@ -230,4 +230,5 @@ footer {
   bottom: 0;
   left: 0;
   width: 100%;
+  margin-top: 20px;
 }
