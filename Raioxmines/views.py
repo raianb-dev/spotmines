@@ -97,3 +97,23 @@ def singup():
     new_user.save()
     return 'Criado com sucesso!'
 
+from django.views.decorators.cache import cache_page
+from django.http import HttpResponse
+import os
+
+from django.conf import settings
+
+
+@cache_page(60 * 15) # cache por 15 minutos
+def get_star_image(request):
+    with open('static/img/no-star.png', "rb") as f:
+        image_data = f.read()
+    response = HttpResponse(image_data, content_type="image/png")
+    return response
+    
+@cache_page(60 * 15) # cache por 15 minutos
+def get_star_image_star(request):
+    with open('static/img/star.png', "rb") as f:
+        image_data = f.read()
+    response = HttpResponse(image_data, content_type="image/png")
+    return response

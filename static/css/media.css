@@ -1,8 +1,7 @@
-@media only screen and (min-width: 350px) and (max-width: 500px) {
+@media only screen and (min-width: 300px) and (max-width: 700px) {
     table {
         margin: 0 auto;
         position: absolute;
-        top: 110vw;
         left: 50%;
         transform: translate(-50%, -50%);
         margin-top: 69vw;
@@ -11,11 +10,11 @@
     .container {
         scale: 0.5;
         width: 90vw;
+
     }
 
-
     td {
-        padding: 5px;
+        padding: 6px;
     }
 
 
@@ -37,7 +36,7 @@
         min-height: 4ch;
         font-size: 22px;
         opacity: 0;
-        margin-top: 160vw;
+        margin-top: 185vw;
         font-weight: bolder;
         font-family: Arial, Helvetica, sans-serif;
         min-width: 90vw;
@@ -69,7 +68,7 @@
     }
     input.bnt {
         min-width: 140%;
-        margin-top: -35vw;
+        margin-top: -160vw;
   
     }
 
@@ -105,7 +104,10 @@
         height: -20vw;
 
     }
-
+    .borda-table{
+        height: 540px;
+        position: flex;
+    }
 
 @media only screen and (min-width: 1100px) and (max-width: 3000px) {
 

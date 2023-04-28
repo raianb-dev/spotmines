@@ -87,15 +87,19 @@
       <div class="paragraph">
         <p id="p"></p>
       </div>
-      <table>
-        {% for i in "12345" %}
-        <tr>
-          {% for j in "12345" %}
-          <td><img src="{% static 'img/no-star.png' %}" alt="Star"></td>
+      <div class="borda-table">
+        <table>
+
+          {% for i in "12345" %}
+          <tr>
+            {% for j in "12345" %}
+            <td><img src="{% url 'get_star_image' %}" alt="Star"></td>
+            {% endfor %}
+          </tr>
           {% endfor %}
-        </tr>
-        {% endfor %}
-      </table>
+
+        </table>
+      </div>
       <div id="countdown"></div>
       <input id="gerar-hack" class="bnt" type="button" value="HACKEAR MINES">
 

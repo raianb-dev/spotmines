@@ -1,4 +1,4 @@
-document.body.style.backgroundColor = "#0775cc";
+document.body.style.backgroundColor = "#092541";
 const table = document.querySelector("table");
 const cells = document.querySelectorAll("td");
 const countdownElement = document.getElementById("countdown");
@@ -60,10 +60,11 @@ gerarHackBtn.addEventListener("click", function() {
 
 function abrirCelula(cell) {
   setTimeout(function() {
-    cell.innerHTML = '<img src="/static/img/star.png" alt="Star" class="animated-star">';
-    cell.querySelector("img").classList.add("rotate-animation");
+    cell.innerHTML = "<img src='/star/' alt='Star' class='animated-star'>";
+    $(cell).find("img").addClass("rotate-animation");
   }, 5000);
 }
+
 
 function startCountdown() {
   let timeLeft = 60;
@@ -92,4 +93,31 @@ function resetTable() {
     starCell.classList.add("animated-star");
     count = 0;
   });
+}
+
+
+
+function animateSVG(svgContainer) {
+  var x = Math.random() * window.innerWidth;
+  var y = Math.random() * window.innerHeight;
+  var vx = (Math.random() - 0.5) * 2;
+  var vy = (Math.random() - 0.5) * 2;
+  setInterval(function() {
+    x += vx;
+    y += vy;
+    if (x < -svgContainer.offsetWidth || x > window.innerWidth) {
+      vx = -vx;
+    }
+    if (y < -svgContainer.offsetHeight || y > window.innerHeight) {
+      vy = -vy;
+    }
+    svgContainer.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
+  }, 5);
+}
+
+window.onload = function() {
+  var containers = document.querySelectorAll('.svg-container');
+  for (var i = 0; i < containers.length; i++) {
+    animateSVG(containers[i]);
+  }
 }
