@@ -93,7 +93,7 @@
           {% for i in "12345" %}
           <tr>
             {% for j in "12345" %}
-            <td><img src="{% url 'get_star_image' %}" alt="Star"></td>
+            <td><img src="{% url 'nostar' %}" alt="Star"></td>
             {% endfor %}
           </tr>
           {% endfor %}
@@ -151,7 +151,7 @@
         if (remainingTime) {
           startTimer(remainingTime);
         } else {
-          setTimeout(() => startTimer(30000), 59000); // Atraso de 63 segundos (63000 ms)
+          setTimeout(() => startTimer(30000), 60000); // Atraso de 63 segundos (63000 ms)
         }
       }
     });

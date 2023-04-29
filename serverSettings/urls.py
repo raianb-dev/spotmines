@@ -10,8 +10,8 @@ urlpatterns = [
   path('login/', views.user_login, name='user_login'),
   path('home/', views.home, name='home'),
   path('', views.welcome, name='welcome'),
-  path('nostar/', views.get_star_image, name='get_star_image'),
-  path('star/', views.get_star_image_star, name='get_star_image_star'),
+  path('nostar/', views.nostar, name='nostar'),
+  path('star/', views.star, name='star'),
   path('webhooks', views.webhook, name='webhook')
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
