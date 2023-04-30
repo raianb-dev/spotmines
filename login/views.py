@@ -48,15 +48,10 @@ def create_user(data):
 
     return 'Criado com sucesso!'
 
-@login_required
-def home(request):
-    return render(request, 'home.html')
-
-@login_required
-def welcome(request):
-    return render(request, 'home.html')
 
 from django.contrib.auth.hashers import check_password
+from django.urls import reverse
+from django.contrib.auth import authenticate, login
 
 def user_login(request):
     if request.method == 'POST':
@@ -66,8 +61,12 @@ def user_login(request):
   
         if q_email.exists():
             user = q_email.first()
-            if check_password(password, user.password):
-                return render(request, 'home.html')
+            print(user.password)
+            user = authenticate(request, email=email, password=password)
+            print(user)
+            if user != None:
+                login(request, user)
+                return redirect(reverse('home'))
             else:
                 messages.error(request, 'Senha incorreta!')
         else:
@@ -76,7 +75,7 @@ def user_login(request):
     return render(request, 'login.html')
 
 def g_hack(request):
-    return render(request, 'home.html')
+    return render(request, '/home/home.html')
 
 
 
@@ -88,11 +87,11 @@ def g_hack(request):
 def singup():
  
     new_user = Users()
-    new_user.name = 'Acesso'
-    new_user.lastname = 'Mines'
-    new_user.username = 'Mines'
-    new_user.email = 'acesso.mines@hacker.com'
-    new_user.password =make_password('acesso.mines')
+    new_user.name = 'Admin'
+    new_user.lastname = 'Admin'
+    new_user.username = 'Admin'
+    new_user.email = 'admin@admin.com'
+    new_user.password =make_password('admin')
 
     new_user.save()
     return 'Criado com sucesso!'

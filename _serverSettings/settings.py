@@ -25,8 +25,9 @@ SECRET_KEY = 'django-insecure-ab(&&ui0kd4m3qe+a(me6sk^ie2(u9j#6kx1-#+i7c64)#**d8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
+AUTH_USER_MODEL = 'login.Users'
 
 # Application definition
 
@@ -37,8 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Raioxmines',
-    'vsl'
+    'vsl',
+    'login',
+    'home'
+
 ]
 
 MIDDLEWARE = [
@@ -51,7 +54,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'serverSettings.urls'
+ROOT_URLCONF = '_serverSettings.urls'
 
 TEMPLATES = [
     {
@@ -69,7 +72,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'serverSettings.wsgi.application'
+WSGI_APPLICATION = '_serverSettings.wsgi.application'
 
 
 # Database
@@ -137,7 +140,14 @@ ALLOWED_HOSTS = ['*']
 # LOGIN ROUTE 
 
 
-LOGIN_URL = '/login/'
+
 
 CSRF_COOKIE_SECURE = False
 CSRF_COOKIE_HTTPONLY = False
+
+
+AUTHENTICATION_BACKENDS = ['login.backends.UsersBackend']
+
+
+LOGIN_REDIRECT_URL = '/home/'
+LOGIN_URL = '/login/'
