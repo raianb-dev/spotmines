@@ -66,7 +66,7 @@ def user_login(request):
             print(user)
             if user != None:
                 login(request, user)
-                return redirect(reverse('home'))
+                return redirect(reverse('mines'))
             else:
                 messages.error(request, 'Senha incorreta!')
         else:
@@ -105,14 +105,14 @@ from django.conf import settings
 
 @cache_page(60 * 15) # cache por 15 minutos
 def nostar(request):
-    with open('static/img/no-star.png', "rb") as f:
+    with open('static/mines/img/no-star.png', "rb") as f:
         image_data = f.read()
     response = HttpResponse(image_data, content_type="image/png")
     return response
     
 @cache_page(60 * 15) # cache por 15 minutos
 def star(request):
-    with open('static/img/star.png', "rb") as f:
+    with open('static/mines/img/star.png', "rb") as f:
         image_data = f.read()
     response = HttpResponse(image_data, content_type="image/png")
     return response

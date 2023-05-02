@@ -1,5 +1,6 @@
 body {
   max-height: 100vh;
+  background-image: linear-gradient(to right, #0780CC, #0256D8);
 }
 td {
   padding: 7px;
@@ -39,22 +40,21 @@ td:hover img {
 .borda {
   height: 135ch;
   box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.315);
-  border-radius: 25px;
+  border-radius: 10px;
   max-width: 100%;
   display: absolute;
-  background-color: #0080ff79;
+  background-image: linear-gradient(to left,  #0780CC, #0256D8);
   
   margin-bottom: 0;
 }
 .borda-table{
   margin: 0 auto;
-  background-color: #2a70b6;
-  width: 600px;
-  height: 550px;
-  border-radius: 15px;
-  box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.315);
-  
+  width: 90%;
+  height: 540px;
+  border-radius: 10px;
+  background-image: linear-gradient(to right, #0780CC, #0256D8);
 }
+
 
 input.bnt {
   margin: 0 auto;
@@ -69,14 +69,17 @@ input.bnt {
   cursor: pointer;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 26px;
-  margin-top: 5vw;
+  margin-top: 2vw;
   border: 2px solid rgb(255, 255, 255);
   background-color: #302f2f00;
+  font-weight: bold;
+
 }
 
 input.bnt:hover {
   background-color: #fff;
   color: black;
+  
 
 }
 
@@ -111,19 +114,19 @@ input.bnt:hover {
 }
 
 #countdown {
+  opacity: 0;
+  min-height: 3ch;
   display: flex;
   transform: translateY(-640px);
-  font-weight: lighter;
+  font-weight: normal;
   font-family: Arial, Helvetica, sans-serif;
-  opacity: 0;
   align-items: center;
   justify-content: center;
   background-color: #d2d392;
-  opacity: 0.5;
-  width: 50%;
+  width: 20%;
   border-radius: 15px;
   color: rgb(41, 41, 41);
-  font-size: 22px;
+  font-size: 26px;
   /* altera o comportamento padrão da imagem para não ser um elemento flexível */
   margin: 0 auto;
 }
@@ -134,8 +137,8 @@ input.bnt:hover {
 }
 
 .spinner {
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   border: 4px solid rgba(0, 0, 0, 0.685);
   border-top-color: #3498db;
@@ -172,16 +175,20 @@ input.bnt:hover {
 
 .svg-left {
   position: fixed;
-  top: 150px;
+  bottom: 2vw;
   left: 0;
-  left: -12%;
+  left: 0%;
+  opacity: 0.7;
+  
 }
 
 .svg-right {
   position: fixed;
-  top: 150px;
+  top: 4vw;
   right: 0;
-  right: -12%;
+  right: 0%;
+  opacity: 0.7;
+  transform: rotate(180deg)
 }
 
 #p {
@@ -191,7 +198,7 @@ input.bnt:hover {
   color: white;
   font-weight: bolder;
   align-items: center;
-  font-size: 22px;
+  font-size: 26px;
 
 }
 
@@ -202,7 +209,7 @@ input.bnt:hover {
   justify-content: center;
   margin-top: -10%;
   width: 100%;
-  font-size: 26x;
+  font-size: 35x;
 
 }
 
@@ -219,15 +226,17 @@ img {
 
 #notification {
   position: fixed;
-  bottom: 50px;
+  bottom: 40px;
   right: 0px;
-  background-color: green;
+  background-color: rgb(104, 189, 196);
   color: white;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 0px;
   display: none;
   animation: slide-in 0.5s forwards;
   z-index: 1000;
+  font-weight: bold;
+  box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.315);
 }
 
 @keyframes slide-in {
@@ -246,4 +255,11 @@ footer {
   left: 0;
   width: 100%;
   margin-top: 20px;
+  color: #fff;
+}
+#acessar-plataforma{
+  margin-top: 0px;
+  background-color: rgba(0, 238, 255, 0.507);
+  color: #fff;
+  font-weight: bold;
 }

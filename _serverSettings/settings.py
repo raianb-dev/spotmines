@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'vsl',
     'login',
+    'mines',
     'home'
 
 ]
@@ -149,5 +150,5 @@ CSRF_COOKIE_HTTPONLY = False
 AUTHENTICATION_BACKENDS = ['login.backends.UsersBackend']
 
 
-LOGIN_REDIRECT_URL = '/home/'
+LOGIN_REDIRECT_URL = '/mines/'
 LOGIN_URL = '/login/'

@@ -1,4 +1,4 @@
-document.body.style.backgroundColor = "#092541";
+
 const table = document.querySelector("table");
 const cells = document.querySelectorAll("td");
 const countdownElement = document.getElementById("countdown");
@@ -14,6 +14,7 @@ let possibleBombs = [8, 6, 4, 2];
 let numBombs = possibleBombs[Math.floor(Math.random() * possibleBombs.length)];
 
 gerarHackBtn.addEventListener("click", function() {
+  
   table.style.display = "flex";
   loading.style.display = "flex";
   loadingText.innerHTML = "Hackeando Mines...";
@@ -70,7 +71,9 @@ function startCountdown() {
   let timeLeft = 60;
   countdownElement.style.opacity = "1";
   pElement.style.opacity = "1";
-  pElement.innerHTML = ` Assertividade: 96% | ${numStars} Estrelas e ${numBombs} Bombas`;
+  let varper = [98.7, 99.0, 96.7, 99.9];
+  let per = varper[Math.floor(Math.random() * varper.length)];
+  pElement.innerHTML = ` Assertividade: ${per}% | ${numBombs} Bombas e  ${numStars} Estrelas `;
 
   const countdownInterval = setInterval(function() {
     timeLeft--;
@@ -79,7 +82,7 @@ function startCountdown() {
     if (timeLeft === 0) {
       clearInterval(countdownInterval);
       countdownElement.style.opacity = "0";
-      gerarHackBtn.classList.remove("disabled");
+      gerarHackBtn.classList.add("disabled");
       pElement.style.opacity = "0";
       resetTable();
     }

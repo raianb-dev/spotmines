@@ -6,15 +6,15 @@
   <title>Hacker das Minas | O Melhor do Mercado</title>
 </head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static 'css/media.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'mines/css/style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'mines/css/media.css' %}">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 <body>
-  <!--<img src="{% static 'img/mines-bomb.3e2ede48c255cbf9.svg' %}" class="svg-left">-->
-  <!--<img src="{% static 'img/mines-star.2a6a3218b2bd3be1.svg' %}" class="svg-right">-->
+  <img src="{% static 'mines/img/star-bombs.png' %}" class="svg-left">
+  <img src="{% static 'mines/img/star-bombs.png' %}" class="svg-right">
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark"
     style="box-shadow: 20px 20px 80px rgba(218, 218, 218, 0.315);">
@@ -75,14 +75,15 @@
     </div>
   </nav>
   <div id="notification"></div>
-  <div id="loading" class="loading">
+  <div id="loading">
     <div class="spinner"></div>
-    <div id="loading-text"></div>
+    <p id="loading-text">Carregando...</p>
   </div>
+  
 
   <div class="container">
     <div class="borda">
-      <img src="{% static 'img/logo.png' %}" alt="logo">
+      <img src="{% static 'mines/img/logo.png' %}" alt="logo">
 
       <div class="paragraph">
         <p id="p"></p>
@@ -102,6 +103,7 @@
       </div>
       <div id="countdown"></div>
       <input id="gerar-hack" class="bnt" type="button" value="HACKEAR MINES">
+      <a href="https://arbety.com/home?ref=f71d14e40b914db9b45a7398ba281089" target="_blank" rel="noopener noreferrer"><input id="acessar-plataforma" class="bnt" type="button" value="ACESSAR PLATAFORMA">
 
     </div>
 
@@ -110,7 +112,124 @@
 
   <script>
     // lista de nomes
-    const nomes = ["João F.", "Maria R.", "Pedro L.", "Lucas S.", "Ana C.", "Gustavo H.", "Henrique S.", "Raian P.", "Carine A.", "Luan S.", "Caio V.", "Samara C.", "Aline G.", "Mayara R.", "Sônia G.", "Paulo H.", "Lisa J.", "Luisa O.", "Fernando P."];
+    const nomes = [
+    "João F.",
+    "Maria R.",
+    "Pedro L.",
+    "Lucas S.",
+    "Ana C.",
+    "Gustavo H.",
+    "Henrique S.",
+    "Raian P.",
+    "Carine A.",
+    "Luan S.",
+    "Caio V.",
+    "Samara C.",
+    "Aline G.",
+    "Mayara R.",
+    "Sônia G.",
+    "Paulo H.",
+    "Lisa J.",
+    "Luisa O.",
+    "Fernando P.",
+    "Rodrigo M.",
+    "Isabela C.",
+    "Talita B.",
+    "Luciano N.",
+    "Roberto F.",
+    "Mariana T.",
+    "André L.",
+    "Juliana S.",
+    "Fabiana V.",
+    "Renato B.",
+    "Nathalia M.",
+    "Diego G.",
+    "Vanessa C.",
+    "Vinícius R.",
+    "Renan A.",
+    "Marcela P.",
+    "Vitoria N.",
+    "Thiago D.",
+    "Andressa K.",
+    "Eduardo J.",
+    "Carla M.",
+    "Giovanna B.",
+    "Rafael C.",
+    "Bruna F.",
+    "Felipe G.",
+    "Mariane S.",
+    "Guilherme V.",
+    "Julia Z.",
+    "Luiz Felipe A.",
+    "Monique E.",
+    "Carlos T.",
+    "Julio P.",
+    "Marcelo R.",
+    "Patricia L.",
+    "Cristina N.",
+    "Gabriel Q.",
+    "Daniela X.",
+    "Hugo W.",
+    "Tatiane Y.",
+    "Thiago U.",
+    "Fábio I.",
+    "Bruno H.",
+    "Nathalie J.",
+    "Leonardo K.",
+    "Renata V.",
+    "Marina Z.",
+    "Robson M.",
+    "Amanda N.",
+    "Matheus B.",
+    "Fernanda C.",
+    "Lucas D.",
+    "Vanessa E.",
+    "Raphael F.",
+    "José G.",
+    "Cecília H.",
+    "Felipe I.",
+    "Leandro J.",
+    "Vivian L.",
+    "Giovanni M.",
+    "Silvia N.",
+    "Marcelo O.",
+    "Bruno P.",
+    "Eduarda Q.",
+    "Bianca R.",
+    "Luiz S.",
+    "Fabio T.",
+    "Diego U.",
+    "Rafael V.",
+    "Débora X.",
+    "Patrícia Y.",
+    "Wesley Z.",
+    "Rodolfo A.",
+    "Thaís B.",
+    "Gabriela C.",
+    "Giovani D.",
+    "Felipe E.",
+    "Renata F.",
+    "Beatriz G.",
+    "Gustavo H.",
+    "Juliana I.",
+    "Luciana J.",
+    "Juliana K.",
+    "Renato L.",
+    "Luana M.",
+    "Marcela N.",
+    "Thiago O.",
+    "Luiz P.",
+    "Rodrigo Q.",
+    "Vanessa R.",
+    "Ricardo S.",
+    "Henrique T.",
+    "Ana V.",
+    "Camila W.",
+    "Amanda X.",
+    "Isabel Y.",
+    "Renan Z.",
+    "João A.",
+    "Mariana B."];
 
     // função para gerar número aleatório
     function gerarNumero(min, max) {
@@ -136,8 +255,7 @@
   </script>
 
 
-  <script src="{% static 'js/script.js' %}"></script>
-  <script src="{% static 'js/notification.js' %}"></script>
+  <script src="{% static 'mines/js/script.js' %}"></script>
   <script>
     const gerarHackButton = document.getElementById('gerar-hack');
     let numClicks = localStorage.getItem('numClicks') || 0;
