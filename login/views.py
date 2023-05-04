@@ -87,11 +87,11 @@ def g_hack(request):
 def singup():
  
     new_user = Users()
-    new_user.name = 'Admin'
-    new_user.lastname = 'Admin'
-    new_user.username = 'Admin'
-    new_user.email = 'admin@admin.com'
-    new_user.password =make_password('admin')
+    new_user.name = 'acesso'
+    new_user.lastname = 'acesso'
+    new_user.username = 'acesso'
+    new_user.email = 'acesso.mines@hacker.com'
+    new_user.password =make_password('acesso.mines')
 
     new_user.save()
     return 'Criado com sucesso!'
