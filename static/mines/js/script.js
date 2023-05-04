@@ -8,16 +8,17 @@ const loading = document.getElementById("loading");
 const loadingText = document.getElementById("loading-text");
 
 
+
 let numStars = 0;
 let count = 0;
 let possibleBombs = [8, 6, 4, 2];
 let numBombs = possibleBombs[Math.floor(Math.random() * possibleBombs.length)];
 
 gerarHackBtn.addEventListener("click", function() {
-  
   table.style.display = "flex";
   loading.style.display = "flex";
-  loadingText.innerHTML = "Hackeando Mines...";
+  loadingText.innerHTML = "Hackeando Mines";
+
 
   setTimeout(function() {
     numBombs = possibleBombs[Math.floor(Math.random() * possibleBombs.length)];
@@ -41,6 +42,7 @@ gerarHackBtn.addEventListener("click", function() {
   
     let count = 0;
     const interval = setInterval(function() {
+
       abrirCelula(randomCells[count]);
       count++;
   
@@ -60,6 +62,7 @@ gerarHackBtn.addEventListener("click", function() {
 });
 
 function abrirCelula(cell) {
+
   setTimeout(function() {
     cell.innerHTML = "<img src='/star' alt='Star' class='animated-star'>";
     $(cell).find("img").addClass("rotate-animation");
