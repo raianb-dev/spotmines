@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'login',
     'mines',
     'home',
-    'double'
+    'double',
+    'pressell'
 
 ]
 

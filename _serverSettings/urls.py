@@ -8,6 +8,7 @@ from django.urls import reverse_lazy
 from django.contrib.auth.views import LogoutView
 from home import views as views_homepage
 from double import views as views_double
+from pressell import views as views_pressell
 
 urlpatterns = [
   # URLS DEFAULT
@@ -20,6 +21,7 @@ urlpatterns = [
   path('star/', views.star, name='star'),
   path('webhooks', views.webhook, name='webhook'),
   path('double/', views_double.double_view, name="double" ),
+  path("pressell/", views_pressell.pressell, name="pressell"),
 
   # URLS HOME
   path('homepage/', views_homepage.homepage, name='homepage'),
