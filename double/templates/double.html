@@ -1,0 +1,110 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Roleta Circular</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'double/css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'double/css/media.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</head>
+
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark"
+        style="box-shadow: 20px 20px 80px rgba(218, 218, 218, 0.315);">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
+                aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="#">Mines</a>
+            <a target="_blank" href="https://arbety.com/home?ref=f71d14e40b914db9b45a7398ba281089"><button id="bonus"
+                    class="btn btn-outline-light ms-2">🎁 BÔNUS 100%</button></a>
+            <style>
+                @keyframes pulse {
+                    0% {
+                        transform: scale(1);
+                    }
+
+                    50% {
+                        transform: scale(1.1);
+                    }
+
+                    100% {
+                        transform: scale(1);
+                    }
+                }
+
+                .pulse {
+                    animation-name: pulse;
+                    animation-duration: 1s;
+                    animation-timing-function: ease-in-out;
+                    animation-iteration-count: 1;
+                }
+            </style>
+            <script>
+                setInterval(function () {
+                    var bonusElement = document.getElementById("bonus");
+                    var bonusText = bonusElement.innerHTML;
+                    if (bonusText === "🎁 BÔNUS 100%") {
+                        bonusElement.innerHTML = "🎁 JOGUE AQUI";
+                    } else {
+                        bonusElement.innerHTML = "🎁 BÔNUS 100%";
+                    }
+                    bonusElement.classList.add("pulse");
+                    setTimeout(function () {
+                        bonusElement.classList.remove("pulse");
+                    }, 1000);
+                }, 5000);
+            </script>
+
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'logout'%}" tabindex="-1" aria-disabled="false">Sair</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="borda">
+        <p class="alerta">ALERTA</p>
+        <p class="cor">PRETO</p>
+        <p class="porcentagem">96%</p>
+        <p class="entrada">ENTRAR NO PRETO</p>
+        <div id="roleta-container">
+            <div id="roleta">
+                <div class="number vermelho">1</div>
+                <div class="number preto">8</div>
+                <div class="number vermelho">2</div>
+                <div class="number preto">9</div>
+                <div class="number vermelho">3</div>
+                <div class="number preto">10</div>
+                <div class="number vermelho">4</div>
+                <div class="number preto">11</div>
+                <div class="number vermelho">5</div>
+                <div class="number preto">12</div>
+                <div class="number vermelho">6</div>
+                <div class="number preto">13</div>
+                <div class="number vermelho">7</div>
+                <div class="number white">15</div>
+                <div class="dummy"></div>
+                <div class="dummy"></div>
+            </div>
+        </div>
+        <div id="container-buttons">
+            <input id="button" type="button" value="GERAR HACK">
+            <input id="button1" type="button" value="ACESSAR PLATAFORMA">
+        </div>
+
+    </div>
+
+</body>
+
+</html>

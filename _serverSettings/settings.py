@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'vsl',
     'login',
     'mines',
-    'home'
+    'home',
+    'double'
 
 ]
 
