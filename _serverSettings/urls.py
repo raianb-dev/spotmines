@@ -22,6 +22,7 @@ urlpatterns = [
   path('webhooks', views.webhook, name='webhook'),
   path('double/', views_double.double_view, name="double" ),
   path("pressell/", views_pressell.pressell, name="pressell"),
+  path("pressell-pixel/", views_pressell.pressell_pixel, name="pressell-pixel"),
 
   # URLS HOME
   path('homepage/', views_homepage.homepage, name='homepage'),
