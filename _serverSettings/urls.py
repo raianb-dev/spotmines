@@ -25,9 +25,8 @@ urlpatterns = [
   path('double/', views_double.double_view, name="double" ),
   path("pressell/", views_pressell.pressell, name="pressell"),
   path("pressell-pixel/", views_pressell.pressell_pixel, name="pressell-pixel"),
-  path('<path:undefined_path>', views.notfound, name='404'),
-  # URLS HOME
   path('homepage/', views_homepage.homepage, name='homepage'),
+  path('<path:undefined_path>', views.notfound, name='404'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:
