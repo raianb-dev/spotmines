@@ -1,12 +1,28 @@
 @media only screen and (max-width: 700px) {
     .card img {
-      max-height: 35vw;
+      max-height: 50vw;
       max-width: 100%;
       object-fit: cover;
       object-position: top; /* ou top left */
     }
     .container-fluid{
         margin: 5vw auto;
+    }
+    .card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: 20px 20px 80px rgba(56, 56, 56, 0.315);
+      display: block; /* adicionado */
+      margin-bottom: 20px; /* adicionado */
+      max-height: 55%;
+      min-width: 45%;
+    }
+    #bonus {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 10px;
     }
   }
   

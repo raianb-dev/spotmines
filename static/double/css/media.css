@@ -1,0 +1,30 @@
+@media only screen and (min-width: 300px) and (max-width: 700px) {
+    #borda{
+        min-width: 100%;
+        transform: translateY(25%);
+        scale: 0.9;
+        margin-left: 0;
+
+    }
+    #roleta, #roleta-container{
+        transform: translateY(27px);
+        min-height: 100px;
+    }
+    #button, #button1, #button2{
+        transform: translateY(20px);
+        min-height: 40px;
+        max-width: 49%;
+        
+    }
+    #button{
+        max-width: 100%;
+    }
+    #roleta-container {
+        width: 350px;
+
+    }
+    .cor{
+        font-size: 60px;
+    }
+
+}

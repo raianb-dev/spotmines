@@ -40,17 +40,22 @@ body {
 .card img {
     display: block;
     width: 100%;
-    height: auto;
+    height: 45ch;
     z-index: 0;
 
 }
+img:hover {
+    transform: scale(1.4);
+  }
+  
 
 .card {
     display: block;
-    width: 100%;
-    height: auto;
+    width: 20%;
+    height: 60ch;
     z-index: 0;
     transition: transform 0.3s ease-out;
+    margin-left: 15px;
 }
 
 .card:hover {
@@ -69,4 +74,5 @@ footer {
     left: 0;
     width: 100%;
     margin-top: 20px;
+    font-size: 11px;
 }

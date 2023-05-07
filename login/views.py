@@ -66,7 +66,7 @@ def user_login(request):
             print(user)
             if user != None:
                 login(request, user)
-                return redirect(reverse('mines'))
+                return redirect(reverse('homepage'))
             else:
                 messages.error(request, 'Senha incorreta!')
         else:
