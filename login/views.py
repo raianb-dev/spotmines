@@ -116,3 +116,7 @@ def star(request):
         image_data = f.read()
     response = HttpResponse(image_data, content_type="image/png")
     return response
+
+
+def notfound(request, undefined_path):
+    return render(request, '404.html', status=404)
