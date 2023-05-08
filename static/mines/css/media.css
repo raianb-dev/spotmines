@@ -122,12 +122,12 @@
 
     }
     .bnt-links1{
-        min-width: 20vw; 
+        min-width: 25ch; 
         margin-right: 1ch;
 
     }
     .bnt-links{
-        min-width: 20vw; 
+        min-width: 25ch; 
         margin-right: 1ch;
 
     }
@@ -157,7 +157,7 @@
 
       }
     input.bnt{
-        min-width: 45vw; 
+        min-width: 50vw; 
     }
     
 }
