@@ -1,0 +1,14 @@
+@media only screen and (min-width: 300px) and (max-width: 700px){
+    .container{
+        margin-left: 0;
+        margin: 35% auto;
+        max-width: 70%;
+        scale: 1.1;
+        padding: 5%;
+        transform: translatex(-2%);
+    }
+    .button input{
+        display: flex;
+        margin: 0 auto;
+    }
+}
