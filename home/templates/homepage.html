@@ -75,28 +75,33 @@
     </nav>
     <div class="container-fluid">
         <div class="row d-flex justify-content-center">
-          <div class="col-sm d-flex justify-content-center">
-            <div class="card bg-dark">
+          <div id="margin-content" class="col-sm d-flex justify-content-center">
+            <div id="segundocard" class="card bg-dark">
+                <img src="{% static 'homepage/img/mines.png' %}" data-color="#fff" class="card-img-top" alt="Imagem 2">
+                <span class="position-absolute top-0 start-0 badge bg-danger" style="margin-left: 0px; margin-top:15px;">Popular</span>
+                
+                <div class="card-body">
+                  <h5 class="card-title" >Mines</h5>
+                  <a href="{% url 'mines' %}" class="btn btn-outline-primary" >Entrar</a>
+                </div>
+              </div>
+            <div id="primeirocard" class="card bg-dark">
               <div class="position-relative">
                 <img src="{% static 'homepage/img/double.png' %}" class="card-img-top" alt="Imagem 1">
-                <span class="position-absolute top-0 start-0 badge bg-danger" style="margin-left: 0px; margin-top:15px">Lançamento</span>
+                <span class="position-absolute top-0 start-0 badge bg-danger" style="margin-left: 0px; margin-top:15px;">Lançamento</span>
               </div>
               <div class="card-body">
                 <h5 class="card-title">Double</h5>
                 <a href="{% url 'double' %}" class="btn btn-outline-danger">Entrar</a>
               </div>
             </div>
-            <div class="card bg-dark">
-              <img src="{% static 'homepage/img/mines.png' %}" data-color="#fff" class="card-img-top" alt="Imagem 2">
-              <div class="card-body">
-                <h5 class="card-title" >Mines</h5>
-                <a href="{% url 'mines' %}" class="btn btn-outline-primary" >Entrar</a>
-              </div>
-            </div>
-            <div class="card bg-dark" style="display: none;">
+
+            <div id="terceirocard" class="card bg-dark">
               <img src="{% static 'homepage/img/teste.png' %}" class="card-img-top" alt="Imagem 3">
+              <span class="position-absolute top-0 start-0 badge bg-primary" style="margin-left: 0px; margin-top:15px;">Em breve</span>
               <div class="card-body">
-                <h5 class="card-title">Crash</h5>
+                
+                <h5 class="card-title">Aviatrix</h5>
                 <a href="#" class="btn btn-outline-danger" style="border-color:pink ; color:pink">Entrar</a>
               </div>
             </div>
