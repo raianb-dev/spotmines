@@ -27,7 +27,4 @@ urlpatterns = [
   # URLS HOME
   path('homepage/', views_homepage.homepage, name='homepage'),
   path('<path:undefined_path>', views_404.notfound, name='404'),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
-if settings.DEBUG:
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] 
