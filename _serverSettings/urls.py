@@ -10,6 +10,8 @@ from home import views as views_homepage
 from double import views as views_double
 from pressell import views as views_pressell
 from notfound import views as views_404
+
+
 urlpatterns = [
   # URLS DEFAULT
   path('', views.user_login, name='welcome'),
@@ -26,5 +28,5 @@ urlpatterns = [
 
   # URLS HOME
   path('homepage/', views_homepage.homepage, name='homepage'),
-  path('<path:undefined_path>', views_404.notfound, name='404'),
-] 
+  path('404/', views_404.notfound, name='404'),
+]
