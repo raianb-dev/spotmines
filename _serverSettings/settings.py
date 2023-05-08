@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'mines',
     'home',
     'double',
-    'pressell'
+    'pressell',
+    'notfound'
 
 ]
 
