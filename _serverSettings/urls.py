@@ -28,7 +28,7 @@ urlpatterns = [
   path("pressell-pixel/", views_pressell.pressell_pixel, name="pressell-pixel"),
   path('homepage/', views_homepage.homepage, name='homepage'),
   path('aviatrix/', views_aviatrix.aviatrix, name='aviatrix'),
-  path('<path:undefined_path>', views.notfound, name='404')
+  path('<path:undefined_path>', views.notfound, name='404'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:
