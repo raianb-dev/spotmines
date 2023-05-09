@@ -44,12 +44,8 @@ INSTALLED_APPS = [
     'home',
     'double',
     'pressell',
-<<<<<<< HEAD
-    'aviatrix'
-=======
+    'aviatrix',
     'notfound'
->>>>>>> origin
-
 ]
 
 MIDDLEWARE = [
