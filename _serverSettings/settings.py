@@ -44,7 +44,11 @@ INSTALLED_APPS = [
     'home',
     'double',
     'pressell',
+<<<<<<< HEAD
+    'aviatrix'
+=======
     'notfound'
+>>>>>>> origin
 
 ]
 
@@ -60,11 +64,12 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = '_serverSettings.urls'
-
+import os
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [            # aqui você pode adicionar outros diretórios de modelo, se desejar
+            os.path.join(BASE_DIR, 'login/templates'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

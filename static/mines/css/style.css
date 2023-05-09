@@ -28,7 +28,7 @@ td:hover img {
 }
 
 .container {
-  margin-top: -195px;
+  margin-top: -295px;
   margin-bottom: 0;
   display: flex;
   flex-direction: column;
@@ -37,7 +37,16 @@ td:hover img {
   width: 100vw;
 }
 
-
+.borda {
+  height: 135ch;
+  box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.315);
+  border-radius: 30px;
+  max-width: 100%;
+  display: absolute;
+  background-image: linear-gradient(to left,  #0780CC, #0256D8);
+  
+  margin-bottom: 0;
+}
 .borda-table{
   margin: 0 auto;
   width: 90%;
@@ -108,7 +117,7 @@ input.bnt:hover {
   opacity: 0;
   min-height: 3ch;
   display: flex;
-  transform: translateY(-660px);
+  transform: translateY(-640px);
   font-weight: normal;
   font-family: Arial, Helvetica, sans-serif;
   align-items: center;
@@ -199,9 +208,9 @@ input.bnt:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-top: -16%;
+  margin-top: -10%;
   width: 100%;
-  font-size: 40x;
+  font-size: 35x;
 
 }
 
@@ -248,7 +257,6 @@ footer {
   width: 100%;
   margin-top: 20px;
   color: #fff;
-  font-size: 12px;
 }
 #acessar-plataforma{
   margin-top: 0px;
@@ -282,6 +290,7 @@ footer {
 }
 
 .bnt-links {
+  min-width: vw; /* alterado para 40vw */
   margin: 0;
   min-height: 7ch;
   padding: 0;
