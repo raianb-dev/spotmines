@@ -33,5 +33,4 @@ urlpatterns = [
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-  path('404/', views_404.notfound, name='404'),
-]
+
