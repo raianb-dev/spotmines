@@ -9,12 +9,9 @@ from django.contrib.auth.views import LogoutView
 from home import views as views_homepage
 from double import views as views_double
 from pressell import views as views_pressell
-<<<<<<< HEAD
 from aviatrix import views as views_aviatrix
-=======
 from notfound import views as views_404
 
->>>>>>> origin
 
 urlpatterns = [
   # URLS DEFAULT
@@ -30,14 +27,11 @@ urlpatterns = [
   path("pressell/", views_pressell.pressell, name="pressell"),
   path("pressell-pixel/", views_pressell.pressell_pixel, name="pressell-pixel"),
   path('homepage/', views_homepage.homepage, name='homepage'),
-<<<<<<< HEAD
   path('aviatrix/', views_aviatrix.aviatrix, name='aviatrix'),
   path('<path:undefined_path>', views.notfound, name='404')
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-=======
   path('404/', views_404.notfound, name='404'),
 ]
->>>>>>> origin
