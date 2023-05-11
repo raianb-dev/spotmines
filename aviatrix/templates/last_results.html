@@ -1,0 +1,11 @@
+
+<div id="last-result">
+
+    {% for game in gameHistory %}
+    {% if game.random > 2 %}
+        <div class="number" style="background-color: rgb(65, 179, 65)">{{ game.random }}x</div>
+    {% else %}
+        <div class="number" style="background-color: rgb(207, 78, 78)">{{ game.random }}x</div>
+    {% endif %}
+{% endfor %}
+</div>

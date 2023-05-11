@@ -1,12 +1,182 @@
+{%load static%}
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Hacker do Aviatrix | O Melhor do Mercado</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aviatrix</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'aviatrix/css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'aviatrix/css/media.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
+
+
 <body>
-    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="box-shadow: 20px 20px 80px rgb(19, 19, 19);">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
+                aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="{% url 'homepage' %}">Inicio</a>
+            <a target="_blank" href="https://arbety.com/home?ref=f71d14e40b914db9b45a7398ba281089"
+                class="ms-auto"><button id="bonus" class="btn btn-outline-light">🎁 BÔNUS 100%</button></a>
+            <style>
+                @keyframes pulse {
+                    0% {
+                        transform: scale(1);
+                    }
+
+                    50% {
+                        transform: scale(1.1);
+                    }
+
+                    100% {
+                        transform: scale(1);
+                    }
+                }
+
+                .pulse {
+                    animation-name: pulse;
+                    animation-duration: 1s;
+                    animation-timing-function: ease-in-out;
+                    animation-iteration-count: 1;
+                }
+            </style>
+            <script>
+                setInterval(function () {
+                    var bonusElement = document.getElementById("bonus");
+                    var bonusText = bonusElement.innerHTML;
+                    if (bonusText === "🎁 BÔNUS 100%") {
+                        bonusElement.innerHTML = "🎁 JOGUE AQUI";
+                    } else {
+                        bonusElement.innerHTML = "🎁 BÔNUS 100%";
+                    }
+                    bonusElement.classList.add("pulse");
+                    setTimeout(function () {
+                        bonusElement.classList.remove("pulse");
+                    }, 1000);
+                }, 5000);
+            </script>
+
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'logout'%}" tabindex="-1" aria-disabled="false">Sair</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="content">
+        <div id="borda">
+
+            <p class="alerta">GAME</p>
+            <p class="entrada">ANALISANDO RODADAS...</p>
+            <p class="cor">AVIATRIX</p>
+            <p class="porcentagem">2x</p>
+            <p style="color:white" id="lastgame">Ultimas Rodadas:</p><br>
+            <div id="last-result-container">
+
+                {% include 'last_results.html' %}
+            </div>
+            <script>
+                function updateLastResults() {
+                    $.ajax({
+                        url: 'get_last_results',  // URL da sua view no Django para obter os últimos resultados
+                        success: function (response) {
+                            // Encontre o container dos resultados antigos
+                            var lastResultsContainer = $('#last-result-container');
+
+                            // Substitua o conteúdo existente com os novos resultados
+                            lastResultsContainer.html(response);
+
+                            // Aguarde 5 segundos antes de atualizar novamente
+                            setTimeout(updateLastResults, 5000);
+                        },
+                        error: function () {
+                            console.log('Ocorreu um erro na requisição Ajax.');
+                        }
+                    });
+                }
+                updateLastResults()
+
+                function updateResults() {
+                    fetch('json-results')
+                        .then(response => response.json())
+                        .then(data => {
+                            const games = data.games;
+
+
+
+                            
+                            for (let i = 0; i < games.length; i++) {
+                                const game = games[i];
+                                const random = game.random;
+                                const porcentagem = document.getElementsByClassName('porcentagem')[i];
+                                const cor = document.getElementsByClassName('cor')[i];
+                                const alerta = document.getElementsByClassName('alerta')[i];
+                                const entrada = document.getElementsByClassName('entrada')[i];
+
+                                if (random > 1.2 && random < 3) {
+
+                                    porcentagem.innerHTML = '2x';
+                                    cor.style.opacity = '0';
+                                    porcentagem.style.transform = 'translateY(-15px)';
+                                    porcentagem.style.opacity = '1';
+                                    alerta.innerHTML = 'RETIRAR EM:';
+                                    entrada.style.opacity = '0'
+                                    entrada.innerHTML = 'ALERTA DE ENTRADA'
+                                    entrada.style.opacity = '1'
+                                    entrada.style.transform = 'translateY(250px)';
+                                } else {
+                                    // Redefinir estilização quando a condição for falsa
+                                    porcentagem.opacity = '0'; // Remover conteúdo
+                                    cor.style.opacity = '1';
+                                    porcentagem.style.transform = 'none'; // Remover transformação translateY
+                                    porcentagem.style.opacity = '0'; // Tornar o elemento invisível
+                                    alerta.innerHTML = 'GAME'; // Remover conteúdo
+                                    entrada.innerHTML = 'ANALISANDO RODADAS...'
+                                    entrada.style.opacity = '1'
+                                }
+                            }
+                        })
+                        .catch(error => console.error(error));
+                }
+
+                // Executar a função inicialmente
+                updateResults();
+
+                // Definir intervalo de 5 segundos para atualização contínua
+                setInterval(updateResults, 5000);
+
+            </script>
+
+            <div id="container-buttons">
+                <a href="https://btt-pt.hopghpfa.com/pt/casino?partner=p5192p21840pb04a#registration-bonus"
+                    target="_blank" rel="noopener noreferrer"><input id="button2" type="button"
+                        value="PLATAFORMA ANALISADA | BETTILT"></a>
+
+            </div>
+        </div>
+    </div>
+
 </body>
+<script src="{% static 'aviatrix/js/index.js'%}"></script>
+<footer class="bg-dark text-white text-center text-lg-start">
+
+    <!-- Copyright -->
+    <div class="text-center p-6" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2023 - 2026 Copyright:
+        <a class="text-white" href="http://www.hackdasminas.com">www.hackdasminas.com</a>
+    </div>
+    <!-- Copyright -->
+</footer>
+
 </html>
