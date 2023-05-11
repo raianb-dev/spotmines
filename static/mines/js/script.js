@@ -64,7 +64,7 @@ gerarHackBtn.addEventListener("click", function() {
 function abrirCelula(cell) {
 
   setTimeout(function() {
-    cell.innerHTML = "<img src='/star/' alt='Star' class='animated-star'>";
+    cell.innerHTML = "<img src='star' alt='Star' class='animated-star'>";
     $(cell).find("img").addClass("rotate-animation");
   }, 5000);
 }
@@ -93,9 +93,9 @@ function startCountdown() {
 }
 
 function resetTable() {
-  const starCells = document.querySelectorAll('td img[src="/star/"]');
+  const starCells = document.querySelectorAll('td img[src="star"]');
   starCells.forEach(function(starCell) {
-    starCell.setAttribute("src", "/nostar/");
+    starCell.setAttribute("src", "nostar");
     starCell.classList.add("animated-star2");
     count = 0;
   });
