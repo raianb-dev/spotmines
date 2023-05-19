@@ -25,8 +25,8 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="d-flex justify-content-between align-items-center w-100">
-                <a target="_blank" href="https://go.aff.7k-partners.com/5o5nhldp"><button
-                        id="bonus" class="btn btn-outline-light">🎁 BÔNUS 100%</button></a>
+                <a target="_blank" href="https://go.aff.7k-partners.com/5o5nhldp"><button id="bonus"
+                        class="btn btn-outline-light">🎁 BÔNUS 100%</button></a>
                 <style>
                     @keyframes pulse {
                         0% {
@@ -76,7 +76,7 @@
         </div>
     </nav>
     <style>
-        
+
     </style>
 
     <div class="fixed-div">
@@ -240,7 +240,9 @@
 
                     <div class="card-body">
                         <h5 class="card-title">Mines</h5>
-                        <a href="{% url 'mines' %}" class="btn btn-outline-primary">Entrar</a>
+                        <button class="btn btn-outline-primary"
+                            onclick=window.location.href='{% url "mines" %}'>Entrar</button>
+
                     </div>
                 </div>
                 <div id="primeirocard" class="card bg-dark">
@@ -251,7 +253,8 @@
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">Double</h5>
-                        <a href="{% url 'double' %}" class="btn btn-outline-danger">Entrar</a>
+                        <button class="btn btn-outline-danger"
+                        onclick=window.location.href='{% url "double" %}'>Entrar</button>
                     </div>
                 </div>
 
@@ -262,7 +265,9 @@
                     <div class="card-body">
 
                         <h5 class="card-title">Aviatrix</h5>
-                        <a href="{% url 'aviatrix' %}" class="btn btn-outline-danger" style="border-color:pink ; color:pink">Entrar</a>
+                        <button class="btn btn-outline-danger" style="border-color:pink ; color:pink"
+                        onclick=window.location.href='{% url "aviatrix" %}'>Entrar</button>
+
                     </div>
                 </div>
             </div>
