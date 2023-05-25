@@ -2,13 +2,11 @@ from django.shortcuts import render, redirect
 from .models import Users
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-import json
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-import asyncio
 from django.contrib.auth.hashers import make_password
 from .models import Users
-
+import json
 
 @csrf_exempt
 def webhook(request):
@@ -60,15 +58,7 @@ def user_login(request):
         q_email = Users.objects.filter(email=email)
   
         if q_email.exists():
-            user = q_email.first()
-            print(user.password)
-            user = authenticate(request, email=email, password=password)
-            print(user)
-            if user != None:
-                login(request, user)
                 return redirect(reverse('homepage'))
-            else:
-                messages.error(request, 'Senha incorreta!')
         else:
             messages.error(request, 'Email não cadastrado!')
         return render(request, 'login.html')
@@ -76,13 +66,6 @@ def user_login(request):
 
 def g_hack(request):
     return render(request, '/home/home.html')
-
-
-
-
-
-
-
 
 def singup():
  
