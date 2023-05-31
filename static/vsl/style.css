@@ -105,15 +105,16 @@
   .button img {
     margin-left: 10%;
     margin-right: 10%;
-    margin-bottom: 10%;
+    margin-bottom: 3%;
 
   }
   .app img{
-    width: 100px;
+    width: 200px;
   }
   #app1{
-    height: 37px;
-    width: 110px;
+    transform: translateY(-5px);
+    height: 67px;
+    width: 210px;
   }
 
 }
