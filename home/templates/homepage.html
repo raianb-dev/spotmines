@@ -240,8 +240,8 @@
 
                     <div class="card-body">
                         <h5 class="card-title">Mines</h5>
-                        <button class="btn btn-outline-primary"
-                            onclick=window.location.href='{% url "mines" %}'>Entrar</button>
+                        <a href="{% url 'mines' %}"><input type="submit" class="btn btn-outline-primary"
+                                value="Entrar"></a>
 
                     </div>
                 </div>
@@ -254,7 +254,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Double</h5>
                         <button class="btn btn-outline-danger"
-                        onclick=window.location.href='{% url "double" %}'>Entrar</button>
+                            onclick=window.location.href='{% url "double" %}'>Entrar</button>
                     </div>
                 </div>
 
@@ -266,7 +266,7 @@
 
                         <h5 class="card-title">Aviatrix</h5>
                         <button class="btn btn-outline-danger" style="border-color:pink ; color:pink"
-                        onclick=window.location.href='{% url "aviatrix" %}'>Entrar</button>
+                            onclick=window.location.href='{% url "aviatrix" %}'>Entrar</button>
 
                     </div>
                 </div>

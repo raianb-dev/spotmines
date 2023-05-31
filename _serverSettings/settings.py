@@ -156,4 +156,4 @@ AUTHENTICATION_BACKENDS = ['login.backends.UsersBackend']
 
 
 LOGIN_REDIRECT_URL = '/homepage/'
-LOGIN_URL = '/login/'
+LOGIN_URL = '/login'

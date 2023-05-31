@@ -51,14 +51,26 @@ from django.contrib.auth.hashers import check_password
 from django.urls import reverse
 from django.contrib.auth import authenticate, login
 
+from django.contrib.auth.hashers import check_password
+from django.urls import reverse
+from django.contrib.auth import authenticate, login
+
 def user_login(request):
     if request.method == 'POST':
         email = request.POST.get('email')
-        password = request.POST.get('password')
+        password = 'acesso.mines'
         q_email = Users.objects.filter(email=email)
   
         if q_email.exists():
+            user = q_email.first()
+            print(user.password)
+            user = authenticate(request, email=email, password=password)
+            print(user)
+            if user != None:
+                login(request, user)
                 return redirect(reverse('homepage'))
+            else:
+                messages.error(request, 'Senha incorreta!')
         else:
             messages.error(request, 'Email não cadastrado!')
         return render(request, 'login.html')
