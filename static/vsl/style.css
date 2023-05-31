@@ -108,6 +108,12 @@
     margin-bottom: 10%;
 
   }
-
+  .app img{
+    width: 100px;
+  }
+  #app1{
+    height: 37px;
+    width: 110px;
+  }
 
 }
