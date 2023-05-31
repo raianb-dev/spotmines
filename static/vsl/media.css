@@ -1,0 +1,111 @@
+@media only screen and (max-width: 600px) {
+    body {
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      background-color: black;
+      width: 100%;
+      margin: 0;
+      position: relative;
+      margin: 0;
+      padding: 0;
+    }
+  
+    .top {
+      width: 100%;
+      height: 35px;
+      background-color: rgb(0, 162, 255);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px
+    }
+  
+    #frag {
+      font-size: 17px;
+      background-color: rgb(0, 162, 255);
+      color: white;
+      font-weight: bolder;
+      border: 2px solid rgb(0, 162, 255);
+      border-radius: 5px;
+    }
+  
+    .title {
+      margin-top: 10%;
+      margin-bottom: 0%;
+      margin-left: 10%;
+      margin-right: 10%;
+    }
+  
+    .subtitle {
+      font-size: 17px;
+      color: aliceblue;
+      font-weight: bolder;
+      margin-top: 5%;
+      margin-bottom: 0%;
+      margin-left: 10%;
+      margin-right: 10%;
+    }
+  
+    .video {
+      margin-top: 5%;
+      margin-bottom: 10%;
+      margin-left: 10%;
+      margin-right: 10%;
+      width: 80%;
+      height: 200px;
+      background-color: rgba(240, 255, 255, 0.342)
+    }
+  
+    #particles-js {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      z-index: -1;
+    }
+  
+    .top,
+    .title,
+    .subtitle,
+    .video {
+      position: relative;
+      z-index: 1;
+      /* Outros estilos da sua escolha */
+    }
+  
+    #notification {
+      height: 30px;
+      position: fixed;
+      bottom: 40px;
+      right: 0px;
+      background-color: rgb(0, 162, 255);
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      display: none;
+      animation: slide-in 0.5s forwards;
+      z-index: 1000;
+      font-weight: bold;
+      font-size: 12px;
+      box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.315);
+  
+    }
+  
+    @keyframes slide-in {
+      from {
+        right: -300px;
+      }
+  
+      to {
+        right: -2px;
+      }
+    }
+  
+    .button img {
+      margin-left: 10%;
+      margin-right: 10%;
+      margin-bottom: 10%;
+  
+    }
+  
+  }

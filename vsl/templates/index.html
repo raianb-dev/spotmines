@@ -1,5 +1,4 @@
-{%load static%}
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,36 +6,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hacker das Minas | Melhor do Mercado</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="{% static 'vsl/style.css' %}">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
 
+<head>
+    <title>Hack das Minas</title>
+    <link rel="shortcut icon" href="{% static 'mines/img/logo.png' %}" type="image/x-icon">
+</head>
+
+<head>
+
+    <link rel="stylesheet" href="{% static 'vsl/style.css' %}">
+    <link rel="stylesheet" href="{% static 'vsl/media.css' %}">
+
+    <script src="{% static 'vsl/index.js' %}"></script>
 </head>
 
 <body>
-    <div class="ultrasecreto">
-        <img src="{% static 'vsl/img/ultrasecreto.png' %}" alt="">
-    </div>
-    <div class="subtitulo">
-        <span style="color: orange">VOCÊ NUNCA MAIS VAI SOFRER COM A FALTA DE DINHEIRO NA SUA</span><span style="color: red"> CONTA BANCÁRIA !!!</span></span>
-    </div>
-    <div class="paragrafo">
-        <span>
-            EU DESENVOLVI UM SOFTWARE QUE VAI TE FAZER GANHAR MAIS DE <span style="color: rgb(15, 228, 15)">15 SALÁRIOS</span> POR MÊS DIRETO DO CONFORTO DA SUA CASA.
-        </span>
+    <div id="particles-js"></div>
+    <div class="top">
+        Esse video <span style="font-weight: bold;"> exclusivo <span style="font-weight:normal">sairá do ar </span><span
+                style="font-weight: bold">em
+                breve!</span></span>
+                
     </div>
     
-</body>
-<footer class="bg-dark text-white text-center text-lg-start">
-
-    <!-- Copyright -->
-    <div class="text-center p-6" style="background-color: rgba(0, 0, 0, 0.2);">
-      © 2023 - 2026 Copyright:
-      <a class="text-white" href="http://www.hackdasminas.com">www.hackdasminas.com</a>
+    <div class="title">
+        <center>
+            <span id="frag"> VOCÊ GANHOU O ACESSO <span id="frag-inner"> GRATUITO AO HACKER DAS MINAS.</span> </span>
     </div>
-    <!-- Copyright -->
-  </footer>
-  
-  </html>
+    <div class="subtitle">
+        <center>
+            <span>O APLICATIVO SERÁ LIBERADO AO FINAL DESTE VÍDEO DE 3 MINUTOS</span>
+    </div>
+    <div class="video">
+    <!-- ADD VIDEO HERE -->
+    </div>
+    <div class="button">
+        <center>
+        <a href="http://" target="_blank" rel="noopener noreferrer"><img src="{% static 'vsl/img/button.png'%}" alt="button"></a>
+    </div>
+    <div id="notification"></div>
+</body>
+
+<script>
+    particlesJS.load('particles-js', "{% static 'vsl/config.json' %}", function () {
+        console.log('particles.js loaded - callback');
+    });
+</script>
+
 </html>

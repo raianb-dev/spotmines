@@ -1,34 +1,113 @@
-body{
+@media only screen and (min-width: 600px) {
+  body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background-color: black;
-}
-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
     width: 100%;
-    margin-top: 20px;
+    margin: 0;
+    position: relative;
+    margin: 0;
+    padding: 0;
   }
-  
-.ultrasecreto {
-    display: grid;
-    position: flex;
+
+  .top {
+    width: 100%;
+    height: 35px;
+    background-color: rgb(0, 162, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px
+  }
+
+  #frag {
+    font-size: 45px;
+    background-color: rgb(0, 162, 255);
+    color: white;
+    font-weight: bolder;
+    border: 2px solid rgb(0, 162, 255);
+    border-radius: 5px;
+  }
+
+  .title {
+    font-size: 45px;
+    margin-top: 5%;
+    margin-bottom: 0%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  .subtitle {
+    font-size: 35px;
+    color: aliceblue;
+    font-weight: bolder;
+    margin-top: 2%;
+    margin-bottom: 0%;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+
+  .video {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+    height: 400px;
+    background-color: rgba(240, 255, 255, 0.342)
+  }
+
+  #particles-js {
+    position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    width: 400px; /* Defina a largura desejada */
-    margin: 20px auto; /* Centralize horizontalmente */
+    width: 100%;
+    height: 50%;
+    z-index: -1;
   }
-.subtitulo{
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 20px;
-    width: 700px; /* Defina a largura desejada */
-    margin: 30px auto; /* Centralize horizontalmente */
-}
-.paragrafo{
+
+  .top,
+  .title,
+  .subtitle,
+  .video {
+    position: relative;
+    z-index: 1;
+    /* Outros estilos da sua escolha */
+  }
+
+  #notification {
+    height: 50px;
+    position: fixed;
+    bottom: 40px;
+    right: 0px;
+    background-color: rgb(0, 162, 255);
     color: white;
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 14px;
-    width: 1000px; /* Defina a largura desejada */
-    margin: 10px auto; /* Centralize horizontalmente */
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+    animation: slide-in 0.5s forwards;
+    z-index: 1000;
     font-weight: bold;
+    font-size: 25px;
+    box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.315);
+
+  }
+
+  @keyframes slide-in {
+    from {
+      right: -300px;
+    }
+
+    to {
+      right: -2px;
+    }
+  }
+
+  .button img {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 10%;
+
+  }
+
+
 }
