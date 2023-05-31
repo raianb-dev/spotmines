@@ -115,7 +115,8 @@
   }
 
   #app1 {
-    height: 37px;
+    transform:  translateY(-2px);
+    height: 35px;
     width: 110px;
   }
 
