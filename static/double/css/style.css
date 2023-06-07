@@ -103,6 +103,7 @@ html {
 }
 
 #button1 {
+    display: none;
     transform: translateY(4vw);
     border: 2px;
     border-radius: 10px;
@@ -116,6 +117,7 @@ html {
 }
 
 #button2 {
+    display: none;
     transform: translateY(4vw);
     border: 2px;
     border-radius: 10px;
