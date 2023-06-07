@@ -116,6 +116,7 @@
 
       }
     #containerbuttons{
+        display: none;
         margin: 130px auto;
         margin-left: 40px;
 

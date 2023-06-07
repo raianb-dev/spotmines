@@ -90,6 +90,7 @@ html {
 }
 
 #button2 {
+    display: none;
     transform: translateY(0vw);
     border: 2px;
     border-radius: 10px;
@@ -183,6 +184,6 @@ html {
 iframe{
     width: 100%;
     min-height: 650px;
-    transform: translateY(140px);
+    transform: translateY(155px);
 
   }

@@ -58,7 +58,7 @@ from django.contrib.auth import authenticate, login
 def user_login(request):
     if request.method == 'POST':
         email = request.POST.get('email')
-        password = 'acesso.mines'
+        password = 'admin'
         q_email = Users.objects.filter(email=email)
   
         if q_email.exists():

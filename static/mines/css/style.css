@@ -1,5 +1,5 @@
-body {
-  max-height: 100vh;
+body,html {
+  height: 100%;
   background-image: linear-gradient(to right, #0780CC, #0256D8);
 }
 td {
@@ -265,7 +265,7 @@ footer {
   font-weight: bold;
 }
 #containerbuttons {
-  display: flex;
+  display: none;
   justify-content: space-around;
   align-items: center;
   width: 90%;
@@ -314,6 +314,7 @@ footer {
 }
 
 iframe{
+  bottom: 0;
   width: 100%;
   min-height: 650px;
   transform: translateY(-300px);
