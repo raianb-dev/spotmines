@@ -16,6 +16,7 @@ urlpatterns = [
   # URLS DEFAULT
   path('', views.user_login, name='welcome'),
   path('vsl', views_vsl.vsl, name='vsl'),
+  path('vsl-clean', views_vsl.vslclear, name='vsl'),
   path('logout', LogoutView.as_view(next_page=reverse_lazy('user_login')), name='logout'),
   path('login', views.user_login, name='user_login'),
   path('mines', views_mines.mines, name='mines'),

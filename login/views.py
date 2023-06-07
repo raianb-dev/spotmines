@@ -58,7 +58,7 @@ from django.contrib.auth import authenticate, login
 def user_login(request):
     if request.method == 'POST':
         email = request.POST.get('email')
-        password = 'acesso.mines'
+        password = 'admin'
         q_email = Users.objects.filter(email=email)
   
         if q_email.exists():
@@ -76,8 +76,7 @@ def user_login(request):
         return render(request, 'login.html')
     return render(request, 'login.html')
 
-def g_hack(request):
-    return render(request, '/home/home.html')
+
 
 def singup():
  

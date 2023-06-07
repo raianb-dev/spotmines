@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<head>
+    <title>Hack das Minas</title>
+    <link rel="shortcut icon" href="{% static 'mines/img/logo.png' %}" type="image/x-icon">
+</head>
+
+<body>
+    <div class="video">
+        <video src="caminho/do/video.mp4" controls></video>
+    </div>
+    <style>
+        body, html{
+            background-color: #222;
+        }
+        .video video{
+            width: 100%;
+            height: 860px;
+        }
+    </style>
+</body>
+</html>
