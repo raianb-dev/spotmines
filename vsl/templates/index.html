@@ -62,11 +62,12 @@
             setTimeout(function () {
                 // Exibir o botão
                 document.getElementById('meuBotao').style.display = 'block';
-            }, 220000); // Tempo em milissegundos (ms)
+            }, 0); // Tempo em milissegundos (ms)
         });
     </script>
     <div id="notification"></div>
-    <div class="app">
+    <center>
+    <div id="container-app" class="app">
         <center>
             <img id="app1" src="{% static 'vsl/img/Apple.png' %}" alt="applestore">
             <img id="app2" src="{% static 'vsl/img/Playstore.png' %}" alt="playstore">

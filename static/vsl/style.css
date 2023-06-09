@@ -130,4 +130,7 @@
   #meuBotao{
     display: none;
   }
+  #container-app{
+    transform: translateY(250%);
+  }
 }

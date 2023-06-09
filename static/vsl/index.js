@@ -133,7 +133,7 @@ setInterval(function () {
   // número aleatório
   const vezes = gerarNumero(20.00, 564.00);
 
-  notification.innerHTML = "💵 " + nome + " acabou de ganhar  R$ " + vezes + ",00 Reais";
+  notification.innerHTML = "💵 " + nome + " acabou de ganhar  € " + vezes + ".00 Euros";
   notification.style.display = "block";
 
   setTimeout(function () {
