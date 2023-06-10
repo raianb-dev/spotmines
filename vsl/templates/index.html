@@ -15,15 +15,14 @@
 </head>
 
 <head>
-
     <link rel="stylesheet" href="{% static 'vsl/style.css' %}">
     <link rel="stylesheet" href="{% static 'vsl/media.css' %}">
-
     <script src="{% static 'vsl/index.js' %}"></script>
 </head>
 
 <body>
     <div id="particles-js"></div>
+
     <div class="top">
         <span style="font-weight: bold; color: lawngreen;">
             <span>Esse video exclusivo</span>
@@ -31,30 +30,39 @@
             <span style="font-weight: bold; color: rgb(9, 255, 0);">em
                 breve!</span>
         </span>
-
     </div>
 
     <div class="title">
         <center>
             <span id="frag"> VOCÊ GANHOU O ACESSO <span id="frag-inner"> GRATUITO AO HACKER DAS MINAS.</span> </span>
     </div>
+
     <div class="subtitle">
         <center>
             <span>O APLICATIVO SERÁ LIBERADO AO FINAL DESTE VÍDEO DE 3 MINUTOS</span>
     </div>
+
     <div class="video">
         <div style="padding:56.25% 0 0 0;position:relative;"><iframe frameborder="0" allowfullscreen
                 src="https://scripts.converteai.net/05a6a745-d113-4d36-9eb2-19a70f8c7ed3/players/64839ba62bc4c400090857c4/embed.html"
                 id="ifr_64839ba62bc4c400090857c4" style="position:absolute;top:0;left:0;width:100%;height:100%;"
                 referrerpolicy="origin"></iframe></div>
     </div>
+
     <div class="button" id="meuBotao">
         <center>
             <p style="color: #fff ;">Clique no botão abaixo:</p>
             <a href="https://pay.hotmart.com/R81746920Y" target="_blank" rel="noopener noreferrer"><input id="button"
                     type="submit" value="GARANTIR ACESSO"></a>
-            
+
     </div>
+
+    <div class="whatsapp">
+        <a href="https://api.whatsapp.com/send?phone=5521991725457&text=Fala%20Lu%C3%A3,%20quero%20aprender%20a%20ganhar%20dinheiro%20na%20internet"
+            target="_blank" rel="noopener noreferrer"><img src="{% static 'vsl/img/whatsapp.png' %}" alt=""></a>
+    </div>
+
+
     <script>
         // Esperar o evento 'load' da página
         window.addEventListener('load', function () {
@@ -67,19 +75,17 @@
     </script>
     <div id="notification"></div>
     <center>
-    <div id="container-app" class="app">
-        <center>
-            <img id="app1" src="{% static 'vsl/img/Apple.png' %}" alt="applestore">
-            <img id="app2" src="{% static 'vsl/img/Playstore.png' %}" alt="playstore">
-    </div>
+        <div id="container-app" class="app">
+            <center>
+                <img id="app1" src="{% static 'vsl/img/Apple.png' %}" alt="applestore">
+                <img id="app2" src="{% static 'vsl/img/Playstore.png' %}" alt="playstore">
+        </div>
 </body>
 
 <script>
     particlesJS.load('particles-js', "{% static 'vsl/config.json' %}", function () {
         console.log('particles.js loaded - callback');
     });
-
-
 </script>
 
 </html>

@@ -137,5 +137,19 @@
     transform: translateX(-50%);
     display: flex;
   }
-  
+  .whatsapp {
+    cursor: pointer;
+    z-index: 100;
+    position: fixed;
+    bottom: 10%;
+    right: 5%;
+    transition: 200ms;
+  }
+  .whatsapp:hover{
+    scale: 1.1;
+  }
+  .whatsapp img {
+    width: 60px;
+    height: 60px;
+  }
 }
