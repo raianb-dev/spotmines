@@ -197,4 +197,7 @@ nav {
     .content-01{
         margin-left: 22%;
     }
+    .post-img {
+        transform: translateX(12px);
+    }
   }
