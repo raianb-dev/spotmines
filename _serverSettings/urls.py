@@ -11,6 +11,7 @@ from double import views as views_double
 from pressell import views as views_pressell
 from aviatrix import views as views_aviatrix
 from notfound import views as views_404
+from gridcassino import views as views_cassino
 
 urlpatterns = [
   # URLS DEFAULT
@@ -30,6 +31,7 @@ urlpatterns = [
   path('aviatrix', views_aviatrix.aviatrix, name='aviatrix'),
   path('json-results', views_aviatrix.json_results, name='json-results'),
   path('get_last_results',  views_aviatrix.get_last_results, name='get_last_results'),
+  path('games',  views_cassino.grid, name='grid-games'),
   path('<path:undefined_path>', views.notfound, name='404'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

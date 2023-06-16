@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'double',
     'pressell',
     'aviatrix',
-    'notfound'
+    'notfound',
+    'gridcassino'
 ]
 
 MIDDLEWARE = [
