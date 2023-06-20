@@ -31,7 +31,7 @@ urlpatterns = [
   path('aviatrix', views_aviatrix.aviatrix, name='aviatrix'),
   path('json-results', views_aviatrix.json_results, name='json-results'),
   path('get_last_results',  views_aviatrix.get_last_results, name='get_last_results'),
-  path('games',  views_cassino.grid, name='grid-games'),
+  path('-',  views_cassino.grid, name='grid-games'),
   path('<path:undefined_path>', views.notfound, name='404'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
