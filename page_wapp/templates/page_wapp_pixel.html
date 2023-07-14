@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'pressell/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'pressell/css/media.css' %}">
+    <title>Hack das Minas</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="borda">
+            <div class="container-img">
+                <img src="{% static 'mines/img/logo.png'%}" alt="logo">
+            </div>
+            <center>
+                <div class="headline">
+                    <span style="color: #FFF">VOCÊ ESTÁ SENDO REDIRECIONADO PARA O <span style="color: rgb(2, 230, 2);">WHATSAPP...</span></span>
+                </div>
+            </center>
+        </div>
+    </div>
+</body>
+<script>
+    window.onload = function() {
+        window.location.href = "";
+    }
+</script>
+
+</html>2

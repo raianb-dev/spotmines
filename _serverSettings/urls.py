@@ -12,6 +12,7 @@ from pressell import views as views_pressell
 from aviatrix import views as views_aviatrix
 from notfound import views as views_404
 from gridcassino import views as views_cassino
+from page_wapp import views as views_page
 
 urlpatterns = [
   # URLS DEFAULT
@@ -32,6 +33,8 @@ urlpatterns = [
   path('json-results', views_aviatrix.json_results, name='json-results'),
   path('get_last_results',  views_aviatrix.get_last_results, name='get_last_results'),
   path('-',  views_cassino.grid, name='grid-games'),
+  path('whatsapp',  views_page.redirect, name='page'),
+  path('whatsapp-next',  views_page.redirect_next, name='page-next'),
   path('<path:undefined_path>', views.notfound, name='404'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
