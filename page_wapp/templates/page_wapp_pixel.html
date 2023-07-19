@@ -8,6 +8,25 @@
     <link rel="stylesheet" href="{% static 'pressell/css/style.css' %}">
     <link rel="stylesheet" href="{% static 'pressell/css/media.css' %}">
     <title>Hack das Minas</title>
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1376772019535721');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=1376772019535721&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
 </head>
 
 <body>
@@ -26,7 +45,7 @@
 </body>
 <script>
     window.onload = function() {
-        window.location.href = "";
+        window.location.href = "https://api.whatsapp.com/send?phone=5563929939485&text=Fala%20luan,%20quero%20faturar%20R$%20300%20ainda%20hoje.";
     }
 </script>
 
