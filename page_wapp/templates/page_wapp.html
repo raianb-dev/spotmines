@@ -1313,6 +1313,28 @@
     <meta name="msapplication-TileImage"
         content="https://mudesuavidaagora.com/wp-content/uploads/2023/06/cropped-ame-1-270x270.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '2058420584525423');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=2058420584525423&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
+
+
 </head>
 
 <body
@@ -1469,7 +1491,7 @@
                                         vertical-align: middle;
                                         display: inline-block
                                     }
-                                </style> 
+                                </style>
                             </div>
                         </div>
                         <div class="elementor-element elementor-element-79985d33 elementor-widget elementor-widget-text-editor"
@@ -1508,7 +1530,11 @@
                                         display: inline-block
                                     }
                                 </style>
-                                <p>Aplicativo <span style="color: #04ff00;">100% GRÁtis.</span></p>
+
+                                <p><span class="pulsating-text" style="color: #04ff00;">Aguarde</span> você está sendo
+                                    <span class="pulsating-text" style="color:orange;">redirecionado</span> para o<span
+                                        class="pulsating-text" style="color: #04ff00;"> whatsapp...</span>
+                                </p>
                             </div>
                         </div>
                         <div class="elementor-element elementor-element-78e3740c elementor-headline--style-highlight elementor-widget elementor-widget-animated-headline"
@@ -1551,15 +1577,14 @@
                             data-id="2ed3819" data-element_type="widget" data-widget_type="button.default">
                             <div class="elementor-widget-container">
                                 <div class="elementor-button-wrapper">
-                                    {% load static %}
-                                    <a class="elementor-button elementor-button-link elementor-size-sm elementor-animation-grow"
-                                        href="{% url 'page-next'%}" id="botao_pulse">
-                                        <span class="elementor-button-content-wrapper">
-                                            <span class="">
-                                    <i aria-hidden="true" class=""> </i>		<img src="{% static 'vsl/img/whatsapp.png' %}" alt="" style="width:20px; height:20px">	</span>
-                                            <span class="elementor-button-text"> ENVIAR MENSAGEM NO WHATSAPP</span> 
-                            </span>
-                                    </a>
+
+                                    <span class="elementor-button-content-wrapper">
+                                        <span class="elementor-button-icon elementor-align-icon-right">
+
+
+
+                                        </span>
+                                        </a>
                                 </div>
                             </div>
                         </div>
@@ -1662,6 +1687,18 @@
     <script
         src='https://mudesuavidaagora.com/wp-content/plugins/elementor-pro/assets/js/elements-handlers.min.js?ver=3.7.2'
         id='pro-elements-handlers-js'></script>
+    <script>
+        window.onload = function () {
+            // Função que realiza o redirecionamento após 4 segundos
+            function redirectWithDelay() {
+                window.location.href = "https://wa.me/5563992939485?text=Fala+Luan%2C+quero+lucrar+%E2%82%AC+300%2C00+ainda+hoje.";
+            }
+
+            // Aguarda 4 segundos antes de chamar a função de redirecionamento
+            setTimeout(redirectWithDelay, 1800);
+        };
+    </script>
+
 </body>
 
 </html>
