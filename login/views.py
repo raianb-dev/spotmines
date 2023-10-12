@@ -58,7 +58,7 @@ from django.contrib.auth import authenticate, login
 def user_login(request):
     if request.method == 'POST':
         email = request.POST.get('email')
-        password = 'acesso.mines'
+        password = 'vipmines88'
         q_email = Users.objects.filter(email=email)
   
         if q_email.exists():
@@ -81,11 +81,11 @@ def user_login(request):
 def singup():
  
     new_user = Users()
-    new_user.name = 'acesso'
-    new_user.lastname = 'acesso'
-    new_user.username = 'acesso'
-    new_user.email = 'acesso.mines@hacker.com'
-    new_user.password =make_password('acesso.mines')
+    new_user.name = 'anonymous88@live.com'
+    new_user.lastname = 'anonymous88@live.com'
+    new_user.username = 'anonymous88@live.com'
+    new_user.email = 'anonymous88@live.com'
+    new_user.password =make_password('vipmines88')
 
     new_user.save()
     return 'Criado com sucesso!'
